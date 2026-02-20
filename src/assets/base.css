@@ -1,0 +1,57 @@
+/* Custom properties for our Resume Theme */
+:root {
+  /* Slate/Gray color palette */
+  --color-background: #f8fafc; /* Light gray for the app background */
+  --color-text: #334155;       /* Slate 700 for main body text */
+  --color-heading: #0f172a;    /* Slate 900 for bold headers */
+  --color-border: #e2e8f0;     /* Light borders */
+  --color-accent: #2563eb;     /* Blue accent color */
+
+  /* Spacing */
+  --section-gap: 40px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  line-height: 1.6;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure global headers use the heading color */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-heading);
+}
+
+/* Base print styles to ensure backgrounds disappear entirely */
+@media print {
+  body {
+    background: transparent;
+    color: black;
+  }
+}
