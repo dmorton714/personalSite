@@ -294,11 +294,12 @@ onBeforeUnmount(() => {
 .home-hero {
   position: relative;
   width: 100%;
+  max-width: 80%;
   height: 600px;
   background: #000000;
   overflow: hidden;
   border-radius: 12px;
-  margin: 20px 0;
+  margin: 20px auto;
 }
 
 .container {
