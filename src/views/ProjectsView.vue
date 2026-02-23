@@ -20,7 +20,6 @@ const selectedCategory = ref('Vis Project');
     />
 
     <div class="project-display">
-      <p>Showing: <strong>{{ selectedCategory }}</strong></p>
 
       <VisProject 
         v-if="selectedCategory === 'Vis Project'" 
@@ -53,12 +52,12 @@ const selectedCategory = ref('Vis Project');
 
 .page-title {
   text-align: center;
-  margin-top: 40px;
+  margin-top: 10px;
   color: #2c3e50;
 }
 
 .project-display {
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 .project-display p {

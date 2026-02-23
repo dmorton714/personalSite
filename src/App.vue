@@ -74,7 +74,7 @@ import DmLogo from './components/DmLogo.vue'
 
 nav {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.1rem;
   align-items: center;
 }
 
@@ -99,8 +99,7 @@ nav a.router-link-exact-active {
   flex: 1;
   width: 100%;
   max-width: 100%;
-  margin: 0 auto;
-  padding: 2rem;
+  /* margin: 0 auto; */
 }
 
 .footer-connect {
