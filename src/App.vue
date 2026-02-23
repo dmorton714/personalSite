@@ -33,6 +33,14 @@ import DmLogo from './components/DmLogo.vue'
       <a href="https://github.com/dmorton714" target="_blank" rel="noopener noreferrer">
         <img src="/git.svg" alt="GitHub" class="social-icon" />
       </a>
+
+      <a href="mailto:danny.morton714@gmail.com" target="_blank" rel="noopener noreferrer">
+        <img src="/email.png" alt="Email" class="social-icon" />
+      </a>
+
+      <a href="https://www.kycolonels.org/" target="_blank" rel="noopener noreferrer">
+        <img src="/colonel.png" alt="Colonels Logo" class="social-icon" />
+      </a>
     </div>
 
   </div>

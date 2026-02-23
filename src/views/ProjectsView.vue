@@ -2,6 +2,8 @@
 import { ref } from 'vue';
 import FilterBar from '@/components/FilterBar.vue';
 import VisProject from '@/components/VisProject.vue';
+import DataPipeline from '@/components/DataPipeline.vue';
+import JobBoard from '@/components/JobBoard.vue';
 
 // 1. Create the state variable to hold the selection
 const selectedCategory = ref('Vis Project');
@@ -13,24 +15,38 @@ const selectedCategory = ref('Vis Project');
 
     <FilterBar
       v-model="selectedCategory"
-      :options="['Vis Project', 'Data Visualization', 'Machine Learning', 'Web Development']"
+      :options="['Vis Project', 'Data Pipeline Project', 'Job Board', 'Web Development']"
       label="Filter by category:"
-    >
-      <template #actions>
-        <button class="refresh-btn">Refresh Data</button>
-      </template>
-    </FilterBar>
+    />
 
     <div class="project-display">
       <p>Showing: <strong>{{ selectedCategory }}</strong></p>
-      <VisProject :category="selectedCategory" />
+
+      <VisProject 
+        v-if="selectedCategory === 'Vis Project'" 
+        :category="selectedCategory" 
+      />
+
+      <DataPipeline 
+        v-else-if="selectedCategory === 'Data Pipeline Project'" 
+        :category="selectedCategory" 
+      />
+
+      <JobBoard 
+        v-else-if="selectedCategory === 'Job Board'" 
+        :category="selectedCategory" 
+      />
+      
+      <div v-else>
+        <p>Project details for {{ selectedCategory }} coming soon...</p>
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped>
 .projects-page {
-  max-width: 1200px;
+  max-width: 90%;
   margin: 0 auto;
   padding: 20px;
 }
