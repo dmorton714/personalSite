@@ -74,6 +74,7 @@ onUnmounted(() => {
       must move beyond the notebook and understand how to build a modular,
       scalable codebase.
     </p>
+    <img src="/pokeProject/pokef.png" alt="Data Pipeline Diagram" class="header-bg-logo" />
   </header>
 
   <section id="scroll-section">
@@ -118,7 +119,6 @@ onUnmounted(() => {
             <strong>Key takeaway:</strong> The notebook serves as the "drafting
             board" where the logic is proven before it is hardened into scripts.
           </p>
-          <a href="#" class="btn">Find out more</a>
         </div>
 
         <img class="image-1" src="https://assets.codepen.io/732/matthew-deltoro-LdFvvpjnB2A-unsplash-800.jpg" />
@@ -163,8 +163,6 @@ onUnmounted(() => {
             allows multiple developers to work on different parts of the project
             simultaneously without conflict.
           </p>
-
-          <a href="#" class="btn">Find out more</a>
         </div>
 
         <img class="image-2" src="https://assets.codepen.io/732/viviana-rishe-6fNZ7QtXiCs-unsplash-800.jpg" />
@@ -195,7 +193,6 @@ onUnmounted(() => {
             <code>main.py</code> makes the project portable and ready for
             deployment in a cloud environment or a scheduled task.
           </p>
-          <a href="#" class="btn">Find out more</a>
         </div>
 
         <img class="image-3" src="https://assets.codepen.io/732/colton-sturgeon-FiCPutl_aog-unsplash-800.jpg" />
@@ -243,7 +240,7 @@ onUnmounted(() => {
             orchestrator, I built a system that is version-control ready and capable of deployment 
             in a cloud environment.
           </p>
-          <a href="#" class="btn">Find out more</a>
+          <a href="https://github.com/dmorton714/pokemon_analysis_project" class="btn">Find out more</a>
         </div>
       </div>
     </div>
@@ -260,6 +257,7 @@ body {
 }
 
 .page-header {
+  position: relative;
   display: block;
   width: 100%;
   margin: 0 auto;
@@ -267,6 +265,17 @@ body {
   line-height: 1;
   background: linear-gradient(135deg, #2a75bb 0%, #3c5aa6 100%);
   color: white;
+}
+
+.header-bg-logo {
+  position: absolute;
+  bottom: 1rem;
+  right: 2rem;
+  height: 550px;
+  width: auto;
+  opacity: 0.25 !important;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .page-header>* {

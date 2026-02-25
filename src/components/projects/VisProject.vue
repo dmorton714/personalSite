@@ -1,5 +1,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
+import ImageStack from "./ImageStack.vue";
+import Dashboardmock from "./bestOneDash/dashboardMock.vue";
 
 const scrollProgress = ref(0);
 const pathLength = 5414.29;
@@ -72,6 +74,7 @@ onUnmounted(() => {
       To produce meaningful insights, we first needed to build a repeatable data
       pipeline.
     </p>
+    <img src="/bestone/tirebuddy.png" alt="Tire Buddy Logo" class="header-bg-logo" />
   </header>
 
   <section id="scroll-section">
@@ -128,13 +131,11 @@ onUnmounted(() => {
             <strong>Key takeaway:</strong> When APIs don’t exist, automation
             becomes infrastructure.
           </p>
-          <a href="#" class="btn">Find out more</a>
         </div>
 
-        <img
-          class="image-1"
-          src="https://assets.codepen.io/732/matthew-deltoro-LdFvvpjnB2A-unsplash-800.jpg"
-        />
+        <div class="image-1">
+          <ImageStack />
+        </div>
 
         <div class="box box-2">
           <h3>Data Cleaning & Normalization</h3>
@@ -147,8 +148,8 @@ onUnmounted(() => {
             <li>Redundant headers</li>
             <li>Irrelevant columns</li>
             <li>Store-specific formatting differences</li>
-            <li>Mixed date and currency formats</li>
-            <li>Inconsistent product labeling</li>
+            <li>Mixed Customers and product labeling</li>
+            <li>Inconsistent information across sheets</li>
           </ul>
 
           <br />
@@ -170,12 +171,11 @@ onUnmounted(() => {
             consistent structure across all locations. This stage transformed
             raw exports into a reliable source of truth.
           </p>
-          <a href="#" class="btn">Find out more</a>
         </div>
 
         <img
           class="image-2"
-          src="https://assets.codepen.io/732/viviana-rishe-6fNZ7QtXiCs-unsplash-800.jpg"
+          src="/bestone/cleaning.png"
         />
 
         <div class="box box-3">
@@ -205,12 +205,11 @@ onUnmounted(() => {
             The result: scalable insight generation rather than one-off
             reporting.
           </p>
-          <a href="#" class="btn">Find out more</a>
         </div>
 
         <img
           class="image-3"
-          src="https://assets.codepen.io/732/colton-sturgeon-FiCPutl_aog-unsplash-800.jpg"
+          src="/bestone/all_stores_gnp.jpg"
         />
 
         <div class="box box-4">
@@ -241,8 +240,13 @@ onUnmounted(() => {
             The project shifted reporting from reactive spreadsheet review to
             proactive, data-driven decision support.
           </p>
-          <a href="#" class="btn">Find out more</a>
         </div>
+
+        <img
+          class="image-4"
+          src="/bestone/visdash.jpg"
+        />
+
 
         <div class="box box-3">
           <h3>Engineering Impact</h3>
@@ -266,6 +270,10 @@ onUnmounted(() => {
     </div>
   </section>
 
+  <div class="dashboard-preview-wrapper">
+    <Dashboardmock />
+  </div>
+
   <section class="bottom"></section>
 </template>
 
@@ -277,6 +285,7 @@ body {
 }
 
 .page-header {
+  position: relative;
   display: block;
   width: 100%;
   margin: 0 auto;
@@ -284,6 +293,17 @@ body {
   line-height: 1;
   background: linear-gradient(135deg, #B32522 0%, #721816 100%);
   color: white;
+}
+
+.header-bg-logo {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  height: 550px;
+  width: auto;
+  opacity: 0.15 !important;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .page-header > * {
@@ -365,6 +385,7 @@ h2 {
   transform: scale(0.8);
   opacity: 0;
   transition: all 0.6s ease;
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.425);
 }
 
 .box.visible {
@@ -420,25 +441,73 @@ img.visible {
 
 .box-2 {
   grid-column: 2 / span 3;
+  position: relative;
+  z-index: 2;
 }
 
 .image-2 {
-  grid-column: 6 / span 1;
+  grid-column: 5 / span 3;
+  width: 400px;
+  margin-left: -120px;
+  margin-top: 60px; 
+  z-index: 1; 
+  transform: scale(0.8) rotate(12deg); 
+}
+
+img.image-2.visible {
+  opacity: 1;
+  transform: scale(1.1) rotate(12deg);
 }
 
 .box-3 {
   grid-column: 3 / span 3;
+  position: relative;
+  z-index: 2;
 }
 
 .image-3 {
-  grid-column: 1 / span 2;
+  grid-column: 2 / span 2;
+  width: 600px;
+  margin-left: -120px;
+  margin-top: -320px; 
+  z-index: 1;
+  transform: scale(0.8) rotate(20deg); 
+}
+
+img.image-3.visible {
+  opacity: 1;
+  transform: scale(1.1) rotate(20deg);
 }
 
 .box-4 {
   grid-column: 1 / span 3;
+  z-index: 2;
+}
+
+.image-4 {
+  grid-column: 4 / span 2;
+  width: 600px;
+  margin-left: -20px;
+  margin-top: 60px; 
+  z-index: 1;
+  transform: scale(0.8) rotate(10deg); 
+}
+
+img.image-4.visible {
+  opacity: 1;
+  transform: scale(1.1) rotate(10deg);
+}
+
+.dashboard-preview-wrapper {
+  position: relative;
+  width: 100%;
+  height: auto; 
+  margin: 4rem auto;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
 }
 
 .bottom {
-  height: 50vh;
+  height: 10vh;
 }
 </style>

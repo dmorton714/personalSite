@@ -37,10 +37,10 @@ const randInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min
 const pick = (arr) => arr[randInt(0, arr.length - 1)]
 
 const images = [
-  "/balt_trackersm.jpg",
-  "/staatysm.jpg",
-  "/slsteamsm.jpg",
-  "/staatysm.jpg",
+  "/scannerImages/balt_trackersm.jpg",
+  "/scannerImages/staatysm.jpg",
+  "/scannerImages/slsteamsm.jpg",
+  "/scannerImages/staatysm.jpg",
 ]
 
 const calculateCodeDimensions = () => ({

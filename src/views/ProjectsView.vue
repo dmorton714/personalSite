@@ -1,9 +1,9 @@
 <script setup>
 import { ref } from 'vue';
 import FilterBar from '@/components/FilterBar.vue';
-import VisProject from '@/components/VisProject.vue';
-import DataPipeline from '@/components/DataPipeline.vue';
-import JobBoard from '@/components/JobBoard.vue';
+import VisProject from '@/components/projects/VisProject.vue';
+import DataPipeline from '@/components/projects/DataPipeline.vue';
+import JobBoard from '@/components/projects/JobBoard.vue';
 
 // 1. Create the state variable to hold the selection
 const selectedCategory = ref('Vis Project');
