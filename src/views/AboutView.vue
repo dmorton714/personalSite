@@ -20,12 +20,12 @@
     <br>
     <p>
       I’m a Kentucky Colonel and I’ve been given a key to the city of Louisville,
-      which still feels surreal. I’m just someone wholikes to 
-      <span class="emphasis">move, explore, and build things and help people when I can.</span>
+      which still feels surreal. I’m just someone who likes to 
+      <span class="emphasis">move, explore, build things, and help people when I can.</span>
     </p>
     <br>
     <p>
-      I’m also a full-on video game nerd. Strategy games, classic RPGs and open games world
+      I’m also a full-on video game nerd. Strategy games, classic RPGs and open world games
       are my favorites. I love systems, mechanics, and figuring out how
       things work.
     </p>
