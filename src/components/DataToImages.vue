@@ -38,9 +38,12 @@ const pick = (arr) => arr[randInt(0, arr.length - 1)]
 
 const images = [
   "/scannerImages/balt_trackersm.jpg",
-  "/scannerImages/staatysm.jpg",
+  "/scannerImages/jobboard.jpg",
   "/scannerImages/slsteamsm.jpg",
   "/scannerImages/staatysm.jpg",
+  "/scannerImages/tpm.png",
+  "/scannerImages/staatysm.jpg",
+  
 ]
 
 const calculateCodeDimensions = () => ({
