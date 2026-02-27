@@ -507,7 +507,4 @@ img.image-4.visible {
   box-shadow: 0 20px 50px rgba(0,0,0,0.3);
 }
 
-.bottom {
-  height: 10vh;
-}
 </style>

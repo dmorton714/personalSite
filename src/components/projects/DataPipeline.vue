@@ -121,7 +121,7 @@ onUnmounted(() => {
           </p>
         </div>
 
-        <img class="image-1" src="https://assets.codepen.io/732/matthew-deltoro-LdFvvpjnB2A-unsplash-800.jpg" />
+        <img class="image-1" src="/public/pokeProject/notebook.png" />
 
         <div class="box box-2">
           <h3>Phase 2: Modular Architecture</h3>
@@ -165,7 +165,7 @@ onUnmounted(() => {
           </p>
         </div>
 
-        <img class="image-2" src="https://assets.codepen.io/732/viviana-rishe-6fNZ7QtXiCs-unsplash-800.jpg" />
+        <img class="image-2" src="/public/pokeProject/arc.png" />
 
         <div class="box box-3">
           <h3>Phase 3: The main.py Orchestrator</h3>
@@ -195,7 +195,7 @@ onUnmounted(() => {
           </p>
         </div>
 
-        <img class="image-3" src="https://assets.codepen.io/732/colton-sturgeon-FiCPutl_aog-unsplash-800.jpg" />
+        <img class="image-3" src="/public/pokeProject/pokeplot.png" />
 
         <div class="box box-4">
           <h3>Engineering Impact</h3>
@@ -403,34 +403,66 @@ img.visible {
 
 /* Layout positions */
 .box-1 {
-  grid-column: 3 / span 3;
+  grid-column: 3 / span 4;
+  position: relative;
+  z-index: 2;
 }
 
 .image-1 {
   grid-column: 1 / span 2;
+  width: 600px;
+  margin-left: -20px;
+  margin-top: -320px; 
+  z-index: 1;
+  transform: scale(0.8) rotate(-20deg); 
+}
+
+img.image-1.visible {
+  opacity: 1;
+  transform: scale(1.1) rotate(-20deg);
 }
 
 .box-2 {
   grid-column: 2 / span 3;
+  z-index: 2;
 }
 
 .image-2 {
-  grid-column: 6 / span 1;
+  grid-column: 5 / span 3;
+  width: 400px;
+  margin-left: -20px;
+  margin-top: 60px; 
+  z-index: 1; 
+  transform: scale(0.8) rotate(12deg); 
+}
+
+img.image-2.visible {
+  opacity: 1;
+  transform: scale(1.1) rotate(12deg);
 }
 
 .box-3 {
-  grid-column: 3 / span 3;
+  grid-column: 3 / span 4;
+  position: relative;
+  z-index: 2;
 }
 
 .image-3 {
-  grid-column: 1 / span 2;
+  grid-column: 2 / span 2;
+  width: 600px;
+  margin-left: -120px;
+  margin-top: -320px; 
+  z-index: 1;
+  transform: scale(0.8) rotate(20deg); 
+}
+
+img.image-3.visible {
+  opacity: 1;
+  transform: scale(1.1) rotate(20deg);
 }
 
 .box-4 {
   grid-column: 1 / span 4;
 }
 
-.bottom {
-  height: 50vh;
-}
 </style>

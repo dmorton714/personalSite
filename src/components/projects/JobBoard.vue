@@ -47,33 +47,59 @@ onUnmounted(() => {
     <h1>The Problem</h1>
 
     <p>
-      The non-profit organization <strong>Code:You</strong> faced a major hurdle in student placement: job
-      opportunities were scattered across multiple Slack channels, leading to "link rot" and invisible data. Fresh
-      bootcamp graduates struggled to find relevant roles, and the staff had no way to track which skills were actually
-      in demand.
+      The non-profit organization <strong>Code:You</strong> faced a major hurdle
+      in student placement: job opportunities were scattered across multiple
+      Slack channels, leading to "link rot" and invisible data. Fresh bootcamp
+      graduates struggled to find relevant roles, and the staff had no way to
+      track which skills were actually in demand.
     </p>
 
     <p>The core challenges addressed in this project were:</p>
     <ul>
-      <li><strong>Lack of Centralization:</strong> Important job leads were lost in fast-moving chat histories.</li>
-      <li><strong>Data Expiration:</strong> No system existed to prune dead links, leading to a poor user experience for
-        job seekers</li>
-      <li><strong>Visibility Gaps:</strong> Leadership had no metrics on salary trends, regional demand, or required
-        tech stacks</li>
-      <li><strong>Junior Skill Gaps:</strong> Coordinating 9 junior developers required a technical roadmap that
-        balanced learning with production-grade delivery</li>
+      <li>
+        <strong>Lack of Centralization:</strong> Important job leads were lost
+        in fast-moving chat histories.
+      </li>
+      <li>
+        <strong>Data Expiration:</strong> No system existed to prune dead links,
+        leading to a poor user experience for job seekers
+      </li>
+      <li>
+        <strong>Visibility Gaps:</strong> Leadership had no metrics on salary
+        trends, regional demand, or required tech stacks
+      </li>
+      <li>
+        <strong>Junior Skill Gaps:</strong> Coordinating 9 junior developers
+        required a technical roadmap that balanced learning with
+        production-grade delivery
+      </li>
     </ul>
-    <p> <strong>Key takeaway:</strong> We didn't just build a website; we built a <strong>labor market intelligence
-        tool</strong> that allowed students to identify and fill their own skill gaps based on real-time data </p>
-
+    <p>
+      <strong>Key takeaway:</strong> We didn't just build a website; we built a
+      <strong>labor market intelligence tool</strong> that allowed students to
+      identify and fill their own skill gaps based on real-time data
+    </p>
+    <img src="/public/jobboard/cy-logo-stacked-black@2x.png" alt="CodeYou Logo" class="header-bg-logo" />
   </header>
 
   <section id="scroll-section">
-    <svg class="line-svg" preserveAspectRatio="xMidYMin slice" width="100%" fill="none" viewBox="-480 0 2300 2241">
-      <path stroke="#022f47" stroke-width="160" :stroke-dasharray="pathLength" :stroke-dashoffset="pathLength - pathLength * Math.min(scrollProgress * 1.4, 1)
+    <svg
+      class="line-svg"
+      preserveAspectRatio="xMidYMin slice"
+      width="100%"
+      fill="none"
+      viewBox="-480 0 2300 2241"
+    >
+      <path
+        stroke="#022f47"
+        stroke-width="160"
+        :stroke-dasharray="pathLength"
+        :stroke-dashoffset="
+          pathLength - pathLength * Math.min(scrollProgress * 1.4, 1)
         "
         d="M-841 100H584c124 0 225 101 225 225v0c0 124-101 225-225 225h-95a281 281 0 00-281 281v0c0 155 125 281 281 281h442c167 0 304 136 304 304v0c0 168-137 304-304 304H795a439 439 0 00-439 439v82"
-        opacity=".45" />
+        opacity=".45"
+      />
     </svg>
 
     <div class="container">
@@ -83,32 +109,52 @@ onUnmounted(() => {
         <div class="box box-1">
           <h3>Project Roadmap:</h3>
           <p>
-            As Project Manager and Technical Advisor, I led the team through a five-stage deployment to move from manual
-            messaging to an automated, data-driven platform.
+            As Project Manager and Technical Advisor, I led the team through a
+            five-stage deployment to move from manual messaging to an automated,
+            data-driven platform.
           </p>
           <ul>
-            <li> <strong>1. Internal Ingestion & Validation:</strong> We developed a standardized staff input form to
-              replace unstructured Slack posts. This ensured every job entry contained critical metadata like salary,
-              region, and required languages. </li>
-            <li> <strong>2. Redundant Data Architecture:</strong> We designed a hybrid storage solution using
-              <strong>MongoDB</strong> for high-performance querying, with a <strong>Google Sheets failover</strong>.
-              This provided the non-profit staff with a familiar interface for manual audits while maintaining a
-              professional database backend.
+            <li>
+              <strong>1. Internal Ingestion & Validation:</strong> We developed
+              a standardized staff input form to replace unstructured Slack
+              posts. This ensured every job entry contained critical metadata
+              like salary, region, and required languages.
             </li>
-            <li> <strong>3. Automated Lifecycle Management:</strong> To solve the "dead link" problem, we implemented a
-              30-day expiration logic. Posts were automatically flagged or archived after 30 days, ensuring students
-              only spent time on active opportunities. </li>
-            <li> <strong>4. Analytical Dashboarding:</strong> We built a decision-support interface that aggregated job
-              data. This allowed students to visualize demand by region (State vs. Remote) and identify the most
-              requested languages/skills in the current market. </li>
-            <li> <strong>5. Technical Mentorship & Code Review:</strong> Beyond the architecture, I managed the
-              9-developer sprint cycle, stepping in to resolve blockers in database schema design and UI/UX consistency
-              to ensure the final product was production-ready. </li>
+            <li>
+              <strong>2. Redundant Data Architecture:</strong> We designed a
+              hybrid storage solution using <strong>MongoDB</strong> for
+              high-performance querying, with a
+              <strong>Google Sheets failover</strong>. This provided the
+              non-profit staff with a familiar interface for manual audits while
+              maintaining a professional database backend.
+            </li>
+            <li>
+              <strong>3. Automated Lifecycle Management:</strong> To solve the
+              "dead link" problem, we implemented a 30-day expiration logic.
+              Posts were automatically flagged or archived after 30 days,
+              ensuring students only spent time on active opportunities.
+            </li>
+            <li>
+              <strong>4. Analytical Dashboarding:</strong> We built a
+              decision-support interface that aggregated job data. This allowed
+              students to visualize demand by region (State vs. Remote) and
+              identify the most requested languages/skills in the current
+              market.
+            </li>
+            <li>
+              <strong>5. Technical Mentorship & Code Review:</strong> Beyond the
+              architecture, I managed the 9-developer sprint cycle, stepping in
+              to resolve blockers in database schema design and UI/UX
+              consistency to ensure the final product was production-ready.
+            </li>
           </ul>
           <a href="#" class="btn">Find out more</a>
         </div>
 
-        <img class="image-1" src="https://assets.codepen.io/732/matthew-deltoro-LdFvvpjnB2A-unsplash-800.jpg" />
+        <img
+          class="image-1"
+          src="https://assets.codepen.io/732/matthew-deltoro-LdFvvpjnB2A-unsplash-800.jpg"
+        />
 
         <div class="box box-2">
           <h3>Data Cleaning & Normalization</h3>
@@ -147,7 +193,10 @@ onUnmounted(() => {
           <a href="#" class="btn">Find out more</a>
         </div>
 
-        <img class="image-2" src="https://assets.codepen.io/732/viviana-rishe-6fNZ7QtXiCs-unsplash-800.jpg" />
+        <img
+          class="image-2"
+          src="https://assets.codepen.io/732/viviana-rishe-6fNZ7QtXiCs-unsplash-800.jpg"
+        />
 
         <div class="box box-3">
           <h3>Analytical Layer & Reusable Metrics</h3>
@@ -179,7 +228,10 @@ onUnmounted(() => {
           <a href="#" class="btn">Find out more</a>
         </div>
 
-        <img class="image-3" src="https://assets.codepen.io/732/colton-sturgeon-FiCPutl_aog-unsplash-800.jpg" />
+        <img
+          class="image-3"
+          src="https://assets.codepen.io/732/colton-sturgeon-FiCPutl_aog-unsplash-800.jpg"
+        />
 
         <div class="box box-4">
           <h3>Interactive Dashboard & Visualization</h3>
@@ -214,23 +266,39 @@ onUnmounted(() => {
 
         <div class="box box-3">
           <h3>Engineering Impact</h3>
-          
+
           <p>This project demonstrates:</p>
           <ul>
-            <li><strong>Strategic Project Management:</strong> Leading a large team of junior developers through a
-              complex SDLC.</li>
-            <li><strong>Fault-Tolerant System Design:</strong> Implementing database failovers to ensure 100% uptime for
-              non-profit operations.</li>
-            <li><strong>Automation in environments without APIs:</strong> Bridging the gap between manual staff input
-              and automated public displays.</li>
-            <li><strong>Decision-Support Engineering:</strong> Turning raw job posts into actionable insights for
-              student career pivots.</li>
-            <li><strong>Building internal tooling to improve operational visibility:</strong> Providing leadership with
-              the first-ever clear view of their graduates' hiring landscape.</li>
+            <li>
+              <strong>Strategic Project Management:</strong> Leading a large
+              team of junior developers through a complex SDLC.
+            </li>
+            <li>
+              <strong>Fault-Tolerant System Design:</strong> Implementing
+              database failovers to ensure 100% uptime for non-profit
+              operations.
+            </li>
+            <li>
+              <strong>Automation in environments without APIs:</strong> Bridging
+              the gap between manual staff input and automated public displays.
+            </li>
+            <li>
+              <strong>Decision-Support Engineering:</strong> Turning raw job
+              posts into actionable insights for student career pivots.
+            </li>
+            <li>
+              <strong
+                >Building internal tooling to improve operational
+                visibility:</strong
+              >
+              Providing leadership with the first-ever clear view of their
+              graduates' hiring landscape.
+            </li>
           </ul>
 
           <p>
-            It began as a reporting problem. It became a lightweight data pipeline with a decision-support interface.
+            It began as a reporting problem. It became a lightweight data
+            pipeline with a decision-support interface.
           </p>
           <a href="#" class="btn">Find out more</a>
         </div>
@@ -258,7 +326,18 @@ body {
   color: white;
 }
 
-.page-header>* {
+.header-bg-logo {
+  position: absolute;
+  bottom: .2rem;
+  right: 10rem;
+  height: 250px;
+  width: auto;
+  opacity: 0.15 !important;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.page-header > * {
   max-width: 900px;
 }
 
