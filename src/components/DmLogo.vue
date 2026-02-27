@@ -24,6 +24,8 @@ defineProps({
   font-size: v-bind(size);
   margin: 0;
   line-height: 1;
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
 }
 
 .light {
@@ -38,11 +40,6 @@ defineProps({
 
 .centered {
   text-align: center;
-}
-
-.logo {
-  opacity: 0;
-  animation: fadeIn 0.8s ease forwards;
 }
 
 @keyframes fadeIn {

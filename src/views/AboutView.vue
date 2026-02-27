@@ -1,4 +1,6 @@
 <script setup>
+import PhotoGrid from '@/components/about/PhotoGrid.vue';
+
 
 </script>
 
@@ -23,13 +25,6 @@
       which still feels surreal. I’m just someone who likes to 
       <span class="emphasis">move, explore, build things, and help people when I can.</span>
     </p>
-    <br>
-    <p>
-      I’m also a full-on video game nerd. Strategy games, classic RPGs and open world games
-      are my favorites. I love systems, mechanics, and figuring out how
-      things work.
-    </p>
-
     <p class="closing">
       At the core, I’m curious and adventurous. I like understanding how things work,
       whether its a camera, internals of my motorcycle, figuring out complex lines on 
@@ -37,6 +32,9 @@
       <br /><br />
       <span class="highlight">That curiosity shows up in everything I do.</span>
     </p>
+  </div>
+  <div class="phot-grid">
+    <PhotoGrid />
   </div>
 </template>
 
@@ -76,9 +74,4 @@
   font-size: 1.1rem;
 }
 
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-  }
-}
 </style>

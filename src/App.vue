@@ -9,7 +9,7 @@ import DmLogo from './components/DmLogo.vue'
     <header class="top-nav no-print">
       <div class="brand">
         <RouterLink to="/" class="logo-link">
-          <DmLogo size="2.2rem" />
+          <DmLogo size="clamp(1.2rem, 5vw, 2.2rem)" />
         </RouterLink>
       </div>
 
@@ -141,6 +141,42 @@ nav a.router-link-exact-active {
   }
   .app-wrapper {
     background-color: white;
+  }
+}
+
+/* --- RESPONSIVE HEADER --- */
+
+/* Tablets and Large Phones */
+@media (max-width: 768px) {
+  .top-nav {
+    padding: 1rem 1rem; 
+  }
+
+  nav {
+    gap: 0.8rem;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+  }
+}
+
+/* Small Phones (Stacking Layout) */
+@media (max-width: 480px) {
+  .top-nav {
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.8rem;
+    padding: 1rem 0.5rem;
+  }
+
+  nav {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  nav a {
+    font-size: 0.85rem;
   }
 }
 </style>

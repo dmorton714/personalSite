@@ -2,7 +2,7 @@
 import { ref, computed } from 'vue'
 import DmLogo from './DmLogo.vue' // Adjust the path if necessary
 
-// --- FILTER STATE ---
+//  FILTER STATE 
 const categories = ['All', 'Data Analytics', 'Project Management', 'Consulting', 'Creative']
 const selectedCategory = ref('All')
 
@@ -11,12 +11,12 @@ const matchesFilter = (tags) => {
   return tags.includes(selectedCategory.value)
 }
 
-// --- EXPORT FUNCTION ---
+//  EXPORT FUNCTION 
 const exportToPDF = () => {
   window.print() // The @media print CSS handles the formatting
 }
 
-// --- RESUME DATA ---
+//  RESUME DATA 
 const contactInfo = {
   location: 'Louisville, KY',
   phone: '502.262.2642',
@@ -129,7 +129,7 @@ const skills = [
   { name: 'GIS & R', tags: ['Data Analytics'] }
 ]
 
-// --- COMPUTED PROPERTIES ---
+//  COMPUTED PROPERTIES 
 const filteredJobs = computed(() => {
   return jobs.map(job => {
     return { ...job, bullets: job.bullets.filter(b => matchesFilter(b.tags)) }
@@ -231,7 +231,6 @@ const filteredSkills = computed(() => {
 </template>
 
 <style scoped>
-/* Base Container */
 .resume-container {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   color: #333;
@@ -240,11 +239,11 @@ const filteredSkills = computed(() => {
   padding: 20px;
 }
 
-/* Filter Controls & Export */
 .filter-controls {
   margin-bottom: 30px;
   text-align: center;
 }
+
 .filter-label {
   font-size: 0.9rem;
   color: #666;
@@ -252,6 +251,7 @@ const filteredSkills = computed(() => {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
+
 .button-group {
   display: flex;
   justify-content: center;
@@ -259,6 +259,7 @@ const filteredSkills = computed(() => {
   flex-wrap: wrap;
   margin-bottom: 15px;
 }
+
 button {
   background: #f1f5f9;
   border: 1px solid #cbd5e1;
@@ -269,25 +270,28 @@ button {
   transition: all 0.2s;
   color: #475569;
 }
+
 button:hover {
   background: #e2e8f0;
 }
+
 button.active {
   background: #2563eb;
   color: white;
   border-color: #2563eb;
 }
+
 .export-btn {
   background: #10b981;
   color: white;
   border-color: #059669;
   font-weight: 600;
 }
+
 .export-btn:hover {
   background: #059669;
 }
 
-/* Resume Paper Style */
 .resume-paper {
   background: white;
   padding: 40px;
@@ -300,6 +304,7 @@ header {
   text-align: center;
   margin-bottom: 20px;
 }
+
 .contact-line {
   margin: 10px 0 0 0;
   color: #64748b;
@@ -323,43 +328,92 @@ h2 {
   margin-bottom: 15px;
 }
 
-/* Entry Layouts */
 .entry-header {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   margin-bottom: 5px;
 }
+
 .subtitle {
   font-weight: 600;
   color: #475569;
 }
+
 .date {
   font-weight: 500;
   color: #64748b;
   white-space: nowrap;
 }
+
 .job-block {
   margin-bottom: 20px;
 }
+
 ul {
   margin-top: 5px;
   padding-left: 20px;
   color: #334155;
 }
+
 li {
   margin-bottom: 5px;
   line-height: 1.5;
 }
+
 .skills-list {
   line-height: 1.6;
   color: #334155;
 }
 
-/* --- PRINT STYLES --- */
+@media (max-width: 768px) {
+  .resume-paper {
+    padding: 20px 15px;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+  }
+
+  .button-group {
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  button {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+
+  .export-btn {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    padding: 12px;
+  }
+
+  .entry-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    margin-bottom: 10px;
+  }
+
+  .date {
+    font-size: 0.9rem;
+    color: #2563eb;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+    margin-top: 20px;
+  }
+}
+
 @media print {
   @page {
-    margin: 0.5in; /* Sets standard PDF margins */
+    margin: 0.5in;
   }
 
   body {
@@ -379,16 +433,15 @@ li {
     padding: 0;
   }
 
-  /* Hide UI elements on the PDF */
   .no-print {
     display: none !important;
   }
 
-  /* Prevent awkward page breaks */
   h2 {
     page-break-after: avoid;
     break-after: avoid;
   }
+
   .job-block, .entry-header {
     page-break-inside: avoid;
     break-inside: avoid;

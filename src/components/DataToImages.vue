@@ -296,12 +296,9 @@ onBeforeUnmount(() => {
 <style scoped>
 .home-hero {
   position: relative;
-  width: 100%;
-  max-width: 80%;
-  height: 600px;
-  background: #000000;
+  width: 100% !important;
+  height: 350px;
   overflow: hidden;
-  border-radius: 12px;
   margin: 20px auto;
 }
 
@@ -360,7 +357,7 @@ onBeforeUnmount(() => {
 
 .card-image {
   height: 100%;
-  width: auto; /* Let the image aspect ratio dictate the width */
+  width: auto;
   display: block;
   transition: all 0.3s ease;
   filter: brightness(1.1) contrast(1.1);
@@ -376,7 +373,7 @@ onBeforeUnmount(() => {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%; /* Match whatever width the normal card decided to be */
+  width: 100%;
   height: 100%;
   border-radius: 15px;
   overflow: hidden;
@@ -387,9 +384,9 @@ onBeforeUnmount(() => {
   position: absolute;
   top: 0;
   left: 0;
-  width: 1000px; /* Big enough to cover very wide images without wrapping */
+  width: 1000px;
   height: 100%;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   font-family: "Courier New", monospace;
   font-size: 11px;
   line-height: 13px;

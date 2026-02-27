@@ -105,7 +105,7 @@ onUnmounted(() => {
           <h3>Automated Data Extraction</h3>
           <p>
             The POS system did not provide an API, so I implemented a
-            Selenium-based browser automation workflow to programmatically
+            Selenium-based browser automation workflow to
             retrieve reports.
           </p>
 
@@ -113,7 +113,7 @@ onUnmounted(() => {
 
           <ul>
             <li>Authenticated into the POS web interface</li>
-            <li>Navigated dynamic reporting views</li>
+            <li>Navigated to reporting views</li>
             <li>Triggered report generation</li>
             <li>Downloaded and organized exported files</li>
             <li>
@@ -129,7 +129,7 @@ onUnmounted(() => {
 
           <p>
             <strong>Key takeaway:</strong> When APIs don’t exist, automation
-            becomes infrastructure.
+            becomes key.
           </p>
         </div>
 
@@ -140,7 +140,7 @@ onUnmounted(() => {
         <div class="box box-2">
           <h3>Data Cleaning & Normalization</h3>
           <p>
-            Each exported report contained structural inconsistencies,
+            Each exported report contained inconsistencies,
             including:
           </p>
 
@@ -167,7 +167,7 @@ onUnmounted(() => {
           </ul>
 
           <p>
-            The output was a normalized, analysis-ready dataframe with
+            The output was a normalized, to a dataframe with
             consistent structure across all locations. This stage transformed
             raw exports into a reliable source of truth.
           </p>
