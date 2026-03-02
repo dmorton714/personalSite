@@ -1,7 +1,7 @@
 <script setup>
 const projects = [
-  { name: "MongoDB image", image: "../public/jobboard/mongo.png" },
-  { name: "Google Sheet Image", image: "../public/jobboard/sheets.png" },
+  { name: "MongoDB image", image: import.meta.env.BASE_URL + "jobboard/mongo.png" },
+  { name: "Google Sheet Image", image: import.meta.env.BASE_URL + "jobboard/sheets.png" },
 ]
 </script>
 

@@ -1,12 +1,12 @@
 <script setup>
 const projects = [
-  { name: "silverleaf", image: "../public/bestone/sheets.png" },
-  { name: "huntington", image: "../public/bestone/sheets.png" },
-  { name: "silverleaf", image: "../public/bestone/sheets.png" },
-  { name: "huntington", image: "../public/bestone/sheets.png" },
-  { name: "silverleaf", image: "../public/bestone/sheets.png" },
-  { name: "huntington", image: "../public/bestone/sheets.png" },
-  { name: "axsium", image: "../public/bestone/sheets.png" }
+  { name: "Silverleaf", image: import.meta.env.BASE_URL + "bestone/sheets.png" },
+  { name: "Huntington", image: import.meta.env.BASE_URL + "bestone/sheets.png" },
+  { name: "Silverleaf 2", image: import.meta.env.BASE_URL + "bestone/sheets.png" },
+  { name: "Huntington 2", image: import.meta.env.BASE_URL + "bestone/sheets.png" },
+  { name: "Silverleaf 3", image: import.meta.env.BASE_URL + "bestone/sheets.png" },
+  { name: "Huntington 3", image: import.meta.env.BASE_URL + "bestone/sheets.png" },
+  { name: "Axsium", image: import.meta.env.BASE_URL + "bestone/sheets.png" },
 ]
 </script>
 

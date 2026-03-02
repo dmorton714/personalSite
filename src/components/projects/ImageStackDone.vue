@@ -1,7 +1,7 @@
 <script setup>
 const projects = [
-  { name: "Images of Page", image: "../public/jobboard/job.jpg" },
-  { name: "Another Page Image", image: "../public/jobboard/jobboard.jpg" },
+  { name: "Images of Page", image: import.meta.env.BASE_URL + "jobboard/job.jpg" },
+  { name: "Another Page Image", image: import.meta.env.BASE_URL + "jobboard/jobboard.jpg" },
 ]
 </script>
 
