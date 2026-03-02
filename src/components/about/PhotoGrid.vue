@@ -1,22 +1,26 @@
 <script setup>
+// Expose the base URL to the template
+const baseUrl = import.meta.env.BASE_URL;
+
+// Store only the filenames to keep the data clean
 const allImages = [
-  import.meta.env.BASE_URL + "3DAB76AB-3CD9-48D1-9EFE-6A22E330529E.jpg", 
-  import.meta.env.BASE_URL + "IMG_4456.jpg",
-  import.meta.env.BASE_URL + "49034C2D-1530-4D04-95C3-00980EF698CE.jpg", 
-  import.meta.env.BASE_URL + "IMG_5066.jpg",
-  import.meta.env.BASE_URL + "5C00BB05-6414-4A7E-9E30-72327B7AA5B1.jpg", 
-  import.meta.env.BASE_URL + "IMG_6641.jpg",
-  import.meta.env.BASE_URL + "FD4D8D4F-877D-4335-9590-80D9904020AB.jpg", 
-  import.meta.env.BASE_URL + "IMG_8750.jpg",
-  import.meta.env.BASE_URL + "IMG_0319.jpg", 
-  import.meta.env.BASE_URL + "IMG_8753.jpg",
-  import.meta.env.BASE_URL + "IMG_4038.jpg", 
-  import.meta.env.BASE_URL + "climb.jpg",
-  import.meta.env.BASE_URL + "IMG_4127.jpg", 
-  import.meta.env.BASE_URL + "ocean.jpg",
-  import.meta.env.BASE_URL + "IMG_4307.jpg", 
-  import.meta.env.BASE_URL + "skate.jpg",
-  import.meta.env.BASE_URL + "IMG_4428.jpg"
+  "3DAB76AB-3CD9-48D1-9EFE-6A22E330529E.jpg", 
+  "IMG_4456.jpg",
+  "49034C2D-1530-4D04-95C3-00980EF698CE.jpg", 
+  "IMG_5066.jpg",
+  "5C00BB05-6414-4A7E-9E30-72327B7AA5B1.jpg", 
+  "IMG_6641.jpg",
+  "FD4D8D4F-877D-4335-9590-80D9904020AB.jpg", 
+  "IMG_8750.jpg",
+  "IMG_0319.jpg", 
+  "IMG_8753.jpg",
+  "IMG_4038.jpg", 
+  "climb.jpg",
+  "IMG_4127.jpg", 
+  "ocean.jpg",
+  "IMG_4307.jpg", 
+  "skate.jpg",
+  "IMG_4428.jpg"
 ];
 </script>
 
@@ -26,7 +30,7 @@ const allImages = [
       <div class="hex-row">
         <div v-for="img in allImages.slice(0, 6)" :key="img" class="hex-item">
           <div class="unfold-box">
-            <img :src="`/about/${img}`" :alt="img" class="hex-img" />
+            <img :src="`${baseUrl}about/${img}`" :alt="img" class="hex-img" />
           </div>
         </div>
       </div>
@@ -34,7 +38,7 @@ const allImages = [
       <div class="hex-row stagger">
         <div v-for="img in allImages.slice(6, 11)" :key="img" class="hex-item">
           <div class="unfold-box">
-            <img :src="`/about/${img}`" :alt="img" class="hex-img" />
+            <img :src="`${baseUrl}about/${img}`" :alt="img" class="hex-img" />
           </div>
         </div>
       </div>
@@ -42,7 +46,7 @@ const allImages = [
       <div class="hex-row">
         <div v-for="img in allImages.slice(11, 17)" :key="img" class="hex-item">
           <div class="unfold-box">
-            <img :src="`/about/${img}`" :alt="img" class="hex-img" />
+            <img :src="`${baseUrl}about/${img}`" :alt="img" class="hex-img" />
           </div>
         </div>
       </div>
