@@ -22,7 +22,7 @@ import PhotoGrid from '@/components/about/PhotoGrid.vue';
     <br>
     <p>
       I’m a Kentucky Colonel and I’ve been given a key to the city of Louisville,
-      which still feels surreal. I’m just someone who likes to 
+      which is pretty neat. I’m just someone who likes to 
       <span class="emphasis">move, explore, build things, and help people when I can.</span>
     </p>
     <p class="closing">
@@ -38,7 +38,7 @@ import PhotoGrid from '@/components/about/PhotoGrid.vue';
   </div>
 </template>
 
-<style>
+<style scoped>
 .about {
   max-width: 750px;
   display: block;
@@ -67,11 +67,6 @@ import PhotoGrid from '@/components/about/PhotoGrid.vue';
 .emphasis {
   font-weight: 600;
   letter-spacing: 0.5px;
-}
-
-.closing {
-  margin-top: 40px;
-  font-size: 1.1rem;
 }
 
 </style>

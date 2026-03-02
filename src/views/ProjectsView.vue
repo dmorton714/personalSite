@@ -14,37 +14,18 @@ const selectedCategory = ref('Vis Project');
   <div class="projects-page">
     <h1 class="page-title">My Projects</h1>
 
-    <FilterBar
-      v-model="selectedCategory"
-      :options="['Vis Project', 'Data Pipeline Project', 'Job Board', 'Other Projects']"
-      label="Filter by category:"
-    />
+    <FilterBar v-model="selectedCategory"
+      :options="['Vis Project', 'Data Pipeline Project', 'Job Board', 'Other Projects']" label="Filter by Project:" />
 
     <div class="project-display">
 
-      <VisProject 
-        v-if="selectedCategory === 'Vis Project'" 
-        :category="selectedCategory" 
-      />
+      <VisProject v-if="selectedCategory === 'Vis Project'" />
 
-      <DataPipeline 
-        v-else-if="selectedCategory === 'Data Pipeline Project'" 
-        :category="selectedCategory" 
-      />
+      <DataPipeline v-else-if="selectedCategory === 'Data Pipeline Project'" />
 
-      <JobBoard 
-        v-else-if="selectedCategory === 'Job Board'" 
-        :category="selectedCategory" 
-      />
+      <JobBoard v-else-if="selectedCategory === 'Job Board'" />
 
-      <OtherProjects
-      v-else-if="selectedCategory === 'Other Projects'"
-      :category="selectedCategory"
-      />
-      
-      <div v-else>
-        <p>Project details for {{ selectedCategory }} coming soon...</p>
-      </div>
+      <OtherProjects v-else-if="selectedCategory === 'Other Projects'" />
     </div>
   </div>
 </template>

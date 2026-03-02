@@ -465,4 +465,100 @@ img.image-3.visible {
   grid-column: 1 / span 4;
 }
 
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 2rem;
+  }
+  
+  h2 {
+    font-size: 48px;
+    text-align: center;
+  }
+
+  .box {
+    padding: 2.5rem;
+  }
+
+  /* Adjust Grid Spanning for medium screens */
+  .box-1 { grid-column: 2 / span 5; }
+  .box-2 { grid-column: 1 / span 4; }
+  .box-3 { grid-column: 2 / span 5; }
+  .box-4 { 
+    grid-column: 1 / span 4; 
+    margin-top: -100px; /* Reduce overlap */
+  }
+
+  /* Adjust image positions */
+  .image-1 { margin-left: 20px; width: 250px; }
+  .image-2 { margin-left: -400px; width: 250px; }
+  .image-3 { margin-left: 0px; width: 250px; }
+  
+  .header-bg-logo {
+    right: 2rem;
+    height: 180px;
+  }
+}
+
+/* Mobile Devices (Max Width: 768px) */
+@media (max-width: 768px) {
+  .page-header {
+    padding: 4rem 1.5rem;
+  }
+
+  .header-bg-logo {
+    display: none; /* Hide decorative logo on small screens to save space */
+  }
+
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  h2 {
+    font-size: 36px;
+    padding-top: 40px;
+  }
+
+  /* Collapse the grid to a single column stack */
+  .layout-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding-top: 4rem;
+  }
+
+  /* Reset all specialized grid and margin positioning */
+  .box-1, .box-2, .box-3, .box-4, .box-5 {
+    grid-column: auto;
+    margin-top: 0 !important;
+    width: 100%;
+    padding: 2rem;
+  }
+
+  /* Reset image positioning to flow naturally between text blocks */
+  .image-1, .image-2, .image-3 {
+    margin: 0 auto !important;
+    width: 80%;
+    max-width: 300px;
+    transform: scale(0.9) rotate(0deg) !important; /* Remove rotation for clean mobile look */
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Ensure images fade in cleanly without the rotation skew on mobile */
+  img.image-1.visible, img.image-2.visible, img.image-3.visible {
+    transform: scale(1) rotate(0deg) !important;
+  }
+
+  /* Hide the SVG line on mobile as the staggered layout is gone */
+  .line-svg {
+    display: none;
+  }
+  
+  /* Remove the minimum height requirement since the SVG is gone */
+  #scroll-section {
+    min-height: auto;
+    padding-bottom: 4rem;
+  }
+}
+
 </style>
