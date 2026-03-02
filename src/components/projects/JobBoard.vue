@@ -1,5 +1,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
+import ImageStackJob from "./ImageStackJob.vue";
+import ImageStackDone from "./ImageStackDone.vue";
 
 const scrollProgress = ref(0);
 const pathLength = 5414.29;
@@ -83,23 +85,11 @@ onUnmounted(() => {
   </header>
 
   <section id="scroll-section">
-    <svg
-      class="line-svg"
-      preserveAspectRatio="xMidYMin slice"
-      width="100%"
-      fill="none"
-      viewBox="-480 0 2300 2241"
-    >
-      <path
-        stroke="#022f47"
-        stroke-width="160"
-        :stroke-dasharray="pathLength"
-        :stroke-dashoffset="
-          pathLength - pathLength * Math.min(scrollProgress * 1.4, 1)
+    <svg class="line-svg" preserveAspectRatio="xMidYMin slice" width="100%" fill="none" viewBox="-480 0 2300 2241">
+      <path stroke="#022f47" stroke-width="160" :stroke-dasharray="pathLength" :stroke-dashoffset="pathLength - pathLength * Math.min(scrollProgress * 1.4, 1)
         "
         d="M-841 100H584c124 0 225 101 225 225v0c0 124-101 225-225 225h-95a281 281 0 00-281 281v0c0 155 125 281 281 281h442c167 0 304 136 304 304v0c0 168-137 304-304 304H795a439 439 0 00-439 439v82"
-        opacity=".45"
-      />
+        opacity=".45" />
     </svg>
 
     <div class="container">
@@ -151,117 +141,112 @@ onUnmounted(() => {
           <a href="#" class="btn">Find out more</a>
         </div>
 
-        <img
-          class="image-1"
-          src="https://assets.codepen.io/732/matthew-deltoro-LdFvvpjnB2A-unsplash-800.jpg"
-        />
+        <img class="image-1" src="/public/jobboard/slack.png" />
 
         <div class="box box-2">
-          <h3>Data Cleaning & Normalization</h3>
+          <h3>Breaking the Project Into Executable Parts</h3>
           <p>
-            Each exported report contained structural inconsistencies,
-            including:
+            When the project started, the scope was vague. “We need a job board” meant different
+            things to different people. With nine junior developers, that ambiguity would have
+            turned into chaos quickly.
           </p>
 
+          <p>
+            So the first thing I did was break the system into clear parts:
+          </p>
+          <p>
           <ul>
-            <li>Redundant headers</li>
-            <li>Irrelevant columns</li>
-            <li>Store-specific formatting differences</li>
-            <li>Mixed date and currency formats</li>
-            <li>Inconsistent product labeling</li>
+            <li>How jobs enter the system</li>
+            <li>How they’re stored</li>
+            <li>How they expire</li>
+            <li>How they’re queried</li>
+            <li>How they’re displayed</li>
           </ul>
-
-          <br />
-          <p>Using Python (pandas), I built a cleaning pipeline that:</p>
-
-          <ul>
-            <li>Dropped non-essential columns</li>
-            <li>Standardized schema across all stores</li>
-            <li>Normalized date formats and numeric types</li>
-            <li>Cleaned currency fields and unit counts</li>
-            <li>Unified naming conventions</li>
-            <li>
-              Merged seven independent sheets into a single master dataset
-            </li>
-          </ul>
+          </p>
+          <br>
+          <p>
+            Each part became its own set of tickets. Instead of assigning big features, I assigned small,
+            concrete tasks like building validation rules, defining schema fields, or implementing expiration
+            logic. That made it easier for newer developers to contribute without stepping on each other.
+          </p>
 
           <p>
-            The output was a normalized, analysis-ready dataframe with
-            consistent structure across all locations. This stage transformed
-            raw exports into a reliable source of truth.
+            The work moved forward because everyone knew exactly what they were building and why it mattered to the
+            larger system.
           </p>
-          <a href="#" class="btn">Find out more</a>
         </div>
 
-        <img
-          class="image-2"
-          src="https://assets.codepen.io/732/viviana-rishe-6fNZ7QtXiCs-unsplash-800.jpg"
-        />
+        <div class="image-2">
+          <ImageStackJob />
+        </div>
 
         <div class="box box-3">
-          <h3>Analytical Layer & Reusable Metrics</h3>
+          <h3>Managing the Codebase Day to Day</h3>
           <p>
-            With structured data in place, I implemented modular functions to
-            compute key performance metrics:
+            Once development began, my role shifted into coordination and correction.
           </p>
 
+          <p>
+            We ran lightweight sprints and used pull requests for everything. Every PR came
+            through me. Different developers had different naming styles, different approaches 
+            to state management, and different assumptions about validation. Without review, the
+            codebase would have fragmented.
+          </p>
+
+          <p>
+            A lot of my time was spent:
+          </p>
+
+          <p>
           <ul>
-            <li>Top customers by revenue</li>
-            <li>Top customers by units purchased</li>
-            <li>Revenue per store</li>
-            <li>Units sold per store</li>
-            <li>Distribution and ranking analysis</li>
-            <li>Time-based aggregation</li>
+            <li>Refactoring duplicate logic</li>
+            <li>Aligning database queries with the schema</li>
+            <li>Fixing edge cases in expiration rules</li>
+            <li>Standardizing structure on the frontend</li>
           </ul>
+          </p>
+
+          <br>
 
           <p>
-            Functions were written to be reusable and parameterized, allowing
-            flexible filtering by store, date range, or customer. This reduced
-            analysis from manual spreadsheet inspection to deterministic,
-            reproducible computations.
+            When someone got stuck on a MongoDB query or middleware validation, I paired
+            with them and worked through it. The goal wasn’t just to fix the issue, but to
+            make sure they understood the pattern we were establishing.
           </p>
 
           <p>
-            The result: scalable insight generation rather than one-off
-            reporting.
+            By the midpoint of the project, the code felt unified instead of stitched together.
           </p>
-          <a href="#" class="btn">Find out more</a>
         </div>
 
-        <img
-          class="image-3"
-          src="https://assets.codepen.io/732/colton-sturgeon-FiCPutl_aog-unsplash-800.jpg"
-        />
+        <div class="image-3">
+          <ImageStackDone />
+        </div>
 
         <div class="box box-4">
-          <h3>Interactive Dashboard & Visualization</h3>
+          <h3>Keeping the System Stable</h3>
           <p>
-            To surface insights for non-technical stakeholders, I built an
-            interactive dashboard layer.
+            As features accumulated, stability became the priority.
           </p>
 
-          <p>The dashboard enabled the following capabilities:</p>
-          <ul>
-            <li>Displays ranked store performance</li>
-            <li>Highlights high-value customers</li>
-            <li>Allows filtering and sorting</li>
-            <li>Visualizes sales distribution across locations</li>
-            <li>Presents clean, decision-ready metrics</li>
-          </ul>
-
-          <p>This allowed management to:</p>
-          <ul>
-            <li>Identify top-performing stores immediately</li>
-            <li>Detect underperformance</li>
-            <li>Adjust inventory strategy</li>
-            <li>Recognize customer purchasing patterns</li>
-          </ul>
+          <p>
+            We introduced expiration logic, failover storage with Google Sheets, and stricter
+            input validation. Those decisions came from watching how real users interacted
+            with the system and noticing where it could break.
+          </p>
 
           <p>
-            The project shifted reporting from reactive spreadsheet review to
-            proactive, data-driven decision support.
+            Some of the work wasn’t visible in the UI at all.
           </p>
-          <a href="#" class="btn">Find out more</a>
+
+          <p>
+          <ul>
+            <li>Tightening schema rules</li>
+            <li>Cleaning up inconsistent records</li>
+            <li>Preventing invalid submissions from reaching the database</li>
+            <li>Revisiting edge cases discovered during testing</li>
+          </ul>
+          </p>
         </div>
 
         <div class="box box-3">
@@ -287,10 +272,8 @@ onUnmounted(() => {
               posts into actionable insights for student career pivots.
             </li>
             <li>
-              <strong
-                >Building internal tooling to improve operational
-                visibility:</strong
-              >
+              <strong>Building internal tooling to improve operational
+                visibility:</strong>
               Providing leadership with the first-ever clear view of their
               graduates' hiring landscape.
             </li>
@@ -337,7 +320,7 @@ body {
   z-index: 1;
 }
 
-.page-header > * {
+.page-header>* {
   max-width: 900px;
 }
 
@@ -463,33 +446,69 @@ img.visible {
 /* Layout positions */
 .box-1 {
   grid-column: 3 / span 4;
+  position: relative;
+  z-index: 2;
 }
 
 .image-1 {
   grid-column: 1 / span 2;
+  width: 350px;
+  margin-left: 90px;
+  margin-top: -180px; 
+  z-index: 1; 
+  transform: scale(0.8) rotate(-22deg); 
+}
+
+img.image-1.visible {
+  opacity: 1;
+  transform: scale(1.1) rotate(-22deg);
 }
 
 .box-2 {
-  grid-column: 2 / span 3;
+  grid-column: 1 / span 3;
+  position: relative;
+  z-index: 2;
 }
 
 .image-2 {
   grid-column: 6 / span 1;
+  width: 350px;
+  margin-left: -590px;
+  margin-top: 60px; 
+  z-index: 1; 
+  transform: scale(0.8) rotate(12deg); 
+}
+
+img.image-2.visible {
+  opacity: 1;
+  transform: scale(1.1) rotate(12deg);
 }
 
 .box-3 {
   grid-column: 3 / span 3;
+  position: relative;
+  z-index: 2;
 }
 
 .image-3 {
   grid-column: 1 / span 2;
+  width: 350px;
+  margin-left: -150px;
+  margin-top: -360px; 
+  z-index: 1; 
+  transform: scale(0.8) rotate(-12deg); 
+}
+
+img.image-3.visible {
+  opacity: 1;
+  transform: scale(1.1) rotate(-12deg);
 }
 
 .box-4 {
   grid-column: 1 / span 3;
+  margin-top: -250px;
+  position: relative;
+  z-index: 5;
 }
 
-.bottom {
-  height: 50vh;
-}
 </style>

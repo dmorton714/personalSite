@@ -4,6 +4,7 @@ import FilterBar from '@/components/FilterBar.vue';
 import VisProject from '@/components/projects/VisProject.vue';
 import DataPipeline from '@/components/projects/DataPipeline.vue';
 import JobBoard from '@/components/projects/JobBoard.vue';
+import OtherProjects from '@/components/projects/OtherProjects.vue';
 
 // 1. Create the state variable to hold the selection
 const selectedCategory = ref('Vis Project');
@@ -15,7 +16,7 @@ const selectedCategory = ref('Vis Project');
 
     <FilterBar
       v-model="selectedCategory"
-      :options="['Vis Project', 'Data Pipeline Project', 'Job Board', 'Web Development']"
+      :options="['Vis Project', 'Data Pipeline Project', 'Job Board', 'Other Projects']"
       label="Filter by category:"
     />
 
@@ -34,6 +35,11 @@ const selectedCategory = ref('Vis Project');
       <JobBoard 
         v-else-if="selectedCategory === 'Job Board'" 
         :category="selectedCategory" 
+      />
+
+      <OtherProjects
+      v-else-if="selectedCategory === 'Other Projects'"
+      :category="selectedCategory"
       />
       
       <div v-else>
