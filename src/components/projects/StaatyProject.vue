@@ -46,43 +46,49 @@ onUnmounted(() => {
 
 <template>
   <header class="page-header">
-    <h1>The Problem</h1>
+    <div class="header-content">
+      <div class="header-text">
+        <h1>The Problem</h1>
 
-    <p>
-      The goal was to build a sports platform unlike anything else on the
-      market—a comprehensive, data-driven hub that offers deep insights while
-      keeping fans highly engaged. To achieve this, we needed to engineer a
-      robust reporting system to deliver clean, structured data, paired
-      seamlessly with interactive social features. The app goes far beyond a
-      standard stats dashboard; it is an immersive experience designed to bring
-      fans closer to the game.
-    </p>
+        <p>
+          The goal was to build a sports platform unlike anything else on the
+          market—a comprehensive, data-driven hub that offers deep insights while
+          keeping fans highly engaged. To achieve this, we needed to engineer a
+          robust reporting system to deliver clean, structured data, paired
+          seamlessly with interactive social features. The app goes far beyond a
+          standard stats dashboard; it is an immersive experience designed to bring
+          fans closer to the game.
+        </p>
 
-    <p>The core objectives were:</p>
+        <p>The core objectives were:</p>
 
-    <ul>
-      <li>
-        Architect a scalable framework for handling high-volume sports data.
-      </li>
-      <li>Design highly responsive, interactive tools for user engagement.</li>
-      <li>
-        Curate and maintain a comprehensive database of sports statistics.
-      </li>
-      <li>Integrate compelling social and community features.</li>
-    </ul>
+        <ul>
+          <li>
+            Architect a scalable framework for handling high-volume sports data.
+          </li>
+          <li>Design highly responsive, interactive tools for user engagement.</li>
+          <li>
+            Curate and maintain a comprehensive database of sports statistics.
+          </li>
+          <li>Integrate compelling social and community features.</li>
+        </ul>
 
-    <p>
-      Our primary challenge was balancing power with accessibility. We needed to
-      translate complex data into digestible insights without overwhelming the
-      user. This required thoughtful UI/UX design and a strategic approach to
-      presenting data in a way that is both visually engaging and intuitive.
-    </p>
+        <p>
+          Our primary challenge was balancing power with accessibility. We needed to
+          translate complex data into digestible insights without overwhelming the
+          user. This required thoughtful UI/UX design and a strategic approach to
+          presenting data in a way that is both visually engaging and intuitive.
+        </p>
+      </div>
 
-    <img
-      src="/staaty/staaty_logo_withtype.png"
-      alt="Staaty Logo"
-      class="header-bg-logo"
-    />
+      <div class="header-logo">
+        <img
+          src="/staaty/staaty_logo_withtype.png"
+          alt="Staaty Logo"
+          class="header-bg-logo"
+        />
+      </div>
+    </div>
   </header>
 
   <section id="scroll-section">
@@ -94,7 +100,7 @@ onUnmounted(() => {
       viewBox="-480 0 2300 2241"
     >
       <path
-        stroke="#000000"
+        stroke="#CC5500"
         stroke-width="160"
         :stroke-dasharray="pathLength"
         :stroke-dashoffset="
@@ -313,8 +319,6 @@ body {
 }
 
 .page-header {
-  position: relative;
-  display: block;
   width: 100%;
   margin: 0 auto;
   padding: 6rem 2rem;
@@ -323,19 +327,30 @@ body {
   color: white;
 }
 
-.header-bg-logo {
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
-  height: 400px;
-  width: auto;
-  opacity: 100 !important;
-  pointer-events: none;
-  z-index: 1;
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.page-header > * {
-  max-width: 900px;
+.header-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.header-logo {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.header-bg-logo {
+  height: 400px;
+  width: auto;
+  opacity: 1;
+  pointer-events: none;
 }
 
 .page-header h1 {
@@ -374,6 +389,7 @@ body {
   position: relative;
   min-height: 2700px;
   display: grid;
+  overflow: hidden;
 }
 
 .line-svg {
@@ -461,7 +477,7 @@ img.visible {
 
 /* Layout positions */
 .box-1 {
-  grid-column: 3 / span 3;
+  grid-column: 3 / span 4;
 }
 
 .image-1 {
@@ -469,15 +485,13 @@ img.visible {
 }
 
 .box-2 {
-  grid-column: 2 / span 3;
+  grid-column: 1 / span 4;
   position: relative;
   z-index: 2;
 }
 
 .image-2 {
-  grid-column: 5 / span 3;
-  width: 400px;
-  margin-left: -120px;
+  grid-column: 5 / span 2;
   margin-top: 60px;
   z-index: 1;
   transform: scale(0.8) rotate(12deg);
@@ -489,16 +503,14 @@ img.image-2.visible {
 }
 
 .box-3 {
-  grid-column: 3 / span 3;
+  grid-column: 3 / span 4;
   position: relative;
   z-index: 2;
 }
 
 .image-3 {
-  grid-column: 2 / span 2;
-  width: 600px;
-  margin-left: -120px;
-  margin-top: -320px;
+  grid-column: 1 / span 2;
+  margin-top: -400px;
   z-index: 1;
   transform: scale(0.8) rotate(20deg);
 }
@@ -515,9 +527,7 @@ img.image-3.visible {
 }
 
 .image-4 {
-  grid-column: 4 / span 2;
-  width: 600px;
-  margin-left: -20px;
+  grid-column: 4 / span 3;
   margin-top: 60px;
   z-index: 1;
   transform: scale(0.8) rotate(10deg);
@@ -529,23 +539,20 @@ img.image-4.visible {
 }
 
 .box-5 {
-  grid-column: 4 / span 3;
+  grid-column: 3 / span 4;
   z-index: 2;
 }
 
 .image-5 {
   grid-column: 1 / span 2;
-  width: 500px;
-  margin-left: 180px;
-  margin-top: -380px;
   z-index: 1;
   transform: scale(0.8) rotate(-15deg);
   display: flex;
   align-items: center;
   justify-content: center;
-  filter: drop-shadow(2px 2px 0px white) 
-          drop-shadow(-2px -2px 0px white) 
-          drop-shadow(2px -2px 0px white) 
+  filter: drop-shadow(2px 2px 0px white)
+          drop-shadow(-2px -2px 0px white)
+          drop-shadow(2px -2px 0px white)
           drop-shadow(-2px 2px 0px white)
           drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
 }
@@ -613,8 +620,11 @@ img.image-4.visible {
   }
 
   .header-bg-logo {
-    right: 2rem;
-    height: 180px;
+    height: 220px;
+  }
+
+  .header-content {
+    gap: 2rem;
   }
 }
 
@@ -624,8 +634,13 @@ img.image-4.visible {
     padding: 4rem 1.5rem;
   }
 
+  .header-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
   .header-bg-logo {
-    display: none; /* Hide decorative logo on small screens to save space */
+    height: 160px;
   }
 
   .container {

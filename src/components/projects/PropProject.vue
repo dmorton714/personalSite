@@ -81,7 +81,7 @@ onUnmounted(() => {
       workflows, and a highly modular frontend architecture that could grow with
       the application.
     </p>
-    <!-- <img src="/propmg/logo.png" alt="PropMG Logo" class="header-bg-logo" /> -->
+    <span class="header-bg-logo">P</span>
   </header>
 
   <section id="scroll-section">
@@ -93,7 +93,7 @@ onUnmounted(() => {
       viewBox="-480 0 2300 2241"
     >
       <path
-        stroke="#000000"
+        stroke="#146E26"
         stroke-width="160"
         :stroke-dasharray="pathLength"
         :stroke-dashoffset="
@@ -135,10 +135,13 @@ onUnmounted(() => {
           </p>
         </div>
 
-        <div class="image-1">
-          <ImageStack />
-        </div>
 
+        <img
+          src="/prop/p1.png"
+          alt="PropMG Screenshot"
+          class="image-1"
+        />
+     
         <div class="box box-2">
           <h3>Property & Tenant Workflows</h3>
           <p>
@@ -180,7 +183,7 @@ onUnmounted(() => {
           </p>
         </div>
 
-        <!-- <img class="image-2" src="/propmg/tenants.png" /> -->
+        <img class="image-2" src="/prop/p2.jpg" />
 
         <div class="box box-3">
           <h3>Operations & Accounting Engine</h3>
@@ -216,7 +219,7 @@ onUnmounted(() => {
           </p>
         </div>
 
-        <!-- <img class="image-3" src="/propmg/accounting.jpg" /> -->
+        <img class="image-3" src="/prop/p5.png" />
 
         <div class="box box-4">
           <h3>Refactoring & UX Polish</h3>
@@ -255,7 +258,7 @@ onUnmounted(() => {
           </p>
         </div>
 
-        <!-- <img class="image-4" src="/propmg/dashboard.jpg" /> -->
+        <img class="image-4" src="/prop/p4.png" />
 
         <div class="box box-5">
           <h3>Engineering Impact</h3>
@@ -287,8 +290,9 @@ onUnmounted(() => {
             mix of documents into a centralized operational hub, built to scale
             alongside a growing real estate portfolio.
           </p>
-          <a href="#" class="btn">Find out more</a>
+          <!-- <a href="#" class="btn">Find out more</a> -->
         </div>
+        <img class="image-5" src="/prop/p3.jpg" />
       </div>
     </div>
   </section>
@@ -309,7 +313,7 @@ body {
   margin: 0 auto;
   padding: 6rem 2rem;
   line-height: 1;
-  background: linear-gradient(135deg, #b32522 0%, #721816 100%);
+  background: linear-gradient(135deg, #006ff7 0%, #001182 100%);
   color: white;
 }
 
@@ -317,11 +321,13 @@ body {
   position: absolute;
   bottom: 2rem;
   right: 2rem;
-  height: 550px;
-  width: auto;
-  opacity: 0.15 !important;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 550px;
+  line-height: 1;
+  opacity: 0.15;
   pointer-events: none;
   z-index: 1;
+  user-select: none;
 }
 
 .page-header > * {
@@ -361,8 +367,9 @@ body {
 
 #scroll-section {
   position: relative;
-  min-height: 2700px;
+  min-height: 3200px;
   display: grid;
+  overflow: hidden;
 }
 
 .line-svg {
@@ -450,23 +457,28 @@ img.visible {
 
 /* Layout positions */
 .box-1 {
-  grid-column: 3 / span 3;
+  grid-column: 3 / span 4;
 }
 
 .image-1 {
-  grid-column: 1 / span 2;
+  grid-column: 1 / span 3;
+  transform: scale(0.8);
+}
+
+img.image-1.visible {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .box-2 {
-  grid-column: 2 / span 3;
+  margin-top: 60px;
+  grid-column: 1 / span 4;
   position: relative;
   z-index: 2;
 }
 
 .image-2 {
-  grid-column: 5 / span 3;
-  width: 400px;
-  margin-left: -120px;
+  grid-column: 5 / span 2;
   margin-top: 60px;
   z-index: 1;
   transform: scale(0.8) rotate(12deg);
@@ -478,16 +490,14 @@ img.image-2.visible {
 }
 
 .box-3 {
-  grid-column: 3 / span 3;
+  grid-column: 3 / span 4;
   position: relative;
   z-index: 2;
 }
 
 .image-3 {
-  grid-column: 2 / span 2;
-  width: 600px;
-  margin-left: -120px;
-  margin-top: -320px;
+  grid-column: 1 / span 2;
+  margin-top: -200px;
   z-index: 1;
   transform: scale(0.8) rotate(20deg);
 }
@@ -503,9 +513,7 @@ img.image-3.visible {
 }
 
 .image-4 {
-  grid-column: 4 / span 2;
-  width: 600px;
-  margin-left: -20px;
+  grid-column: 4 / span 3;
   margin-top: 60px;
   z-index: 1;
   transform: scale(0.8) rotate(10deg);
@@ -514,6 +522,23 @@ img.image-3.visible {
 img.image-4.visible {
   opacity: 1;
   transform: scale(1.1) rotate(10deg);
+}
+
+.box-5 {
+  grid-column: 4 / span 3;
+  z-index: 2;
+}
+
+.image-5 {
+  grid-column: 1 / span 3;
+  margin-top: -260px;
+  z-index: 1;
+  transform: scale(0.8) rotate(-15deg);
+}
+
+img.image-5.visible {
+  opacity: 1;
+  transform: scale(1.1) rotate(-15deg);
 }
 
 @media (max-width: 1024px) {
@@ -530,108 +555,93 @@ img.image-4.visible {
     padding: 2.5rem;
   }
 
-  /* Adjust Grid Spanning for medium screens */
-  .box-1 {
-    grid-column: 2 / span 5;
-  }
-  .box-2 {
-    grid-column: 1 / span 4;
-  }
-  .box-3 {
-    grid-column: 2 / span 5;
-  }
-  .box-4 {
-    grid-column: 1 / span 4;
-    margin-top: -100px; /* Reduce overlap */
-  }
-
-  /* Adjust image positions */
-  .image-1 {
-    margin-left: 20px;
-    width: 250px;
-  }
-  .image-2 {
-    margin-left: -400px;
-    width: 250px;
-  }
-  .image-3 {
-    margin-left: 0px;
-    width: 250px;
-  }
+  .box-1 { grid-column: 1 / span 4; }
+  .image-1 { grid-column: 5 / span 2; align-self: center; margin-top: 0; }
+  .box-2 { grid-column: 3 / span 4; }
+  .image-2 { grid-column: 1 / span 2; align-self: center; margin-top: 0; }
+  .box-3 { grid-column: 1 / span 4; }
+  .image-3 { grid-column: 5 / span 2; align-self: center; margin-top: 0; }
+  .box-4 { grid-column: 3 / span 4; }
+  .image-4 { grid-column: 1 / span 2; align-self: center; margin-top: 0; }
+  .box-5 { grid-column: 1 / span 4; }
+  .image-5 { grid-column: 5 / span 2; align-self: center; margin-top: 0; }
 
   .header-bg-logo {
-    right: 2rem;
-    height: 180px;
+    font-size: 180px;
   }
 }
 
-/* Mobile Devices (Max Width: 768px) */
 @media (max-width: 768px) {
   .page-header {
-    padding: 4rem 1.5rem;
+    padding: 3rem 1.25rem;
+  }
+
+  .page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .page-header p {
+    font-size: 1rem;
+  }
+
+  .page-header li {
+    font-size: 1rem;
   }
 
   .header-bg-logo {
-    display: none; /* Hide decorative logo on small screens to save space */
+    display: none;
   }
 
   .container {
-    padding: 0 1.5rem;
+    padding: 0;
   }
 
   h2 {
-    font-size: 36px;
-    padding-top: 40px;
+    font-size: 2rem;
+    padding-top: 2.5rem;
+    padding-left: 1.25rem;
+    text-align: left;
   }
 
-  /* Collapse the grid to a single column stack */
   .layout-container {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
-    padding-top: 4rem;
+    gap: 0;
+    padding-top: 1rem;
   }
 
-  /* Reset all specialized grid and margin positioning */
-  .box-1,
-  .box-2,
-  .box-3,
-  .box-4,
-  .box-5 {
-    grid-column: auto;
-    margin-top: 0 !important;
+  .box-1, .box-2, .box-3, .box-4, .box-5 {
     width: 100%;
-    padding: 2rem;
+    padding: 1.75rem 1.25rem;
+    margin-top: 0 !important;
   }
 
-  /* Reset image positioning to flow naturally between text blocks */
-  .image-1,
-  .image-2,
-  .image-3 {
+  .box h3 {
+    font-size: 1.4rem;
+  }
+
+  .image-1, .image-2, .image-3, .image-4, .image-5 {
+    width: 85%;
     margin: 0 auto !important;
-    width: 80%;
-    max-width: 300px;
-    transform: scale(0.9) rotate(0deg) !important; /* Remove rotation for clean mobile look */
-    display: flex;
-    justify-content: center;
-  }
-
-  /* Ensure images fade in cleanly without the rotation skew on mobile */
-  img.image-1.visible,
-  img.image-2.visible,
-  img.image-3.visible {
     transform: scale(1) rotate(0deg) !important;
   }
 
-  /* Hide the SVG line on mobile as the staggered layout is gone */
+  img.image-1.visible,
+  img.image-2.visible,
+  img.image-3.visible,
+  img.image-4.visible,
+  img.image-5.visible {
+    transform: scale(1) rotate(0deg) !important;
+  }
+
   .line-svg {
     display: none;
   }
 
-  /* Remove the minimum height requirement since the SVG is gone */
   #scroll-section {
     min-height: auto;
-    padding-bottom: 4rem;
+    padding-bottom: 3rem;
   }
 }
 </style>

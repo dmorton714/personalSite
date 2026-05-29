@@ -17,17 +17,17 @@ const selectedCategory = ref('STAATY');
     <h1 class="page-title">My Projects</h1>
 
     <FilterBar v-model="selectedCategory"
-      :options="['STAATY', 'Prop Project', 'Vis Project', 'Data Pipeline Project', 'Job Board', 'Other Projects']" label="Filter by Project:" />
+      :options="['STAATY', 'PropMG', 'Vis', 'Data Pipeline', 'Job Board', 'Other Projects']" label="Filter by Project:" />
 
     <div class="project-display">
 
       <StaatyProject v-if="selectedCategory === 'STAATY'" />
 
-      <PropProject v-if="selectedCategory === 'Prop Project'" />
+      <PropProject v-if="selectedCategory === 'PropMG'" />
 
-      <VisProject v-if="selectedCategory === 'Vis Project'" />
+      <VisProject v-if="selectedCategory === 'Vis'" />
 
-      <DataPipeline v-else-if="selectedCategory === 'Data Pipeline Project'" />
+      <DataPipeline v-else-if="selectedCategory === 'Data Pipeline'" />
 
       <JobBoard v-else-if="selectedCategory === 'Job Board'" />
 
@@ -38,14 +38,14 @@ const selectedCategory = ref('STAATY');
 
 <style scoped>
 .projects-page {
-  max-width: 90%;
-  margin: 0 auto;
-  padding: 20px;
+  width: 100%;
+  padding: 0;
 }
 
 .page-title {
   text-align: center;
   margin-top: 10px;
+  padding: 0 20px;
   color: #2c3e50;
 }
 
