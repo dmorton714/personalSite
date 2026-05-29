@@ -47,7 +47,7 @@ onUnmounted(() => {
     <h1>The Problem</h1>
 
     <p>
-      Many Data Science students graduate from bootcamps with high proficiency
+      I found that Data Science students graduate from bootcamps with high proficiency
       in <strong>Jupyter Notebooks</strong>, but little exposure to
       <strong>Production Python</strong>. While notebooks are excellent for
       experimentation, they often lead to "spaghetti code" that is difficult to

@@ -1,13 +1,15 @@
 <script setup>
 import { ref } from 'vue';
 import FilterBar from '@/components/FilterBar.vue';
+import StaatyProject from '@/components/projects/StaatyProject.vue';
+import PropProject from '@/components/projects/PropProject.vue';
 import VisProject from '@/components/projects/VisProject.vue';
 import DataPipeline from '@/components/projects/DataPipeline.vue';
 import JobBoard from '@/components/projects/JobBoard.vue';
 import OtherProjects from '@/components/projects/OtherProjects.vue';
 
 // 1. Create the state variable to hold the selection
-const selectedCategory = ref('Vis Project');
+const selectedCategory = ref('STAATY');
 </script>
 
 <template>
@@ -15,9 +17,13 @@ const selectedCategory = ref('Vis Project');
     <h1 class="page-title">My Projects</h1>
 
     <FilterBar v-model="selectedCategory"
-      :options="['Vis Project', 'Data Pipeline Project', 'Job Board', 'Other Projects']" label="Filter by Project:" />
+      :options="['STAATY', 'Prop Project', 'Vis Project', 'Data Pipeline Project', 'Job Board', 'Other Projects']" label="Filter by Project:" />
 
     <div class="project-display">
+
+      <StaatyProject v-if="selectedCategory === 'STAATY'" />
+
+      <PropProject v-if="selectedCategory === 'Prop Project'" />
 
       <VisProject v-if="selectedCategory === 'Vis Project'" />
 
