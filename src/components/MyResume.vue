@@ -3,7 +3,7 @@ import { ref, computed } from 'vue'
 import DmLogo from './DmLogo.vue' // Adjust the path if necessary
 
 //  FILTER STATE 
-const categories = ['All', 'Data Analytics', 'Project Management', 'Consulting', 'Creative']
+const categories = ['All', 'Software Developer', 'Data Analytics', 'Project Management', 'Consulting']
 const selectedCategory = ref('All')
 
 const matchesFilter = (tags) => {
@@ -16,7 +16,7 @@ const exportToPDF = () => {
   window.print() // The @media print CSS handles the formatting
 }
 
-//  RESUME DATA 
+//  RESUME DATA
 const contactInfo = {
   location: 'Louisville, KY',
   phone: '502.262.2642',
@@ -27,58 +27,87 @@ const education = [
   {
     school: 'Western Kentucky University',
     location: 'Bowling Green, KY',
-    degree: 'Political Science',
+    degree: 'Bachelor of Science, Political Science',
     year: '2010'
   },
   {
     school: 'Jefferson Community And Technical College',
     location: 'Louisville, KY',
-    degree: 'Associates of Applied Science in Graphic Design; Minor in Web Design',
+    degree: 'Associates of Applied Science — Graphic Design & Web Development',
     year: '2013'
   }
 ]
 
 const jobs = [
   {
+    company: 'Napster',
+    location: 'Remote',
+    title: 'QA Automation Engineer / Software Engineer',
+    dates: '2026 – Current',
+    bullets: [
+      { text: 'Architected and developed automated testing scripts using Python and Selenium to streamline regression testing and validate core website functionality for a learning development platform.', tags: ['Software Developer', 'Data Analytics'] },
+      { text: 'Configured GitHub Actions to automatically trigger Selenium test suites, establishing a hands-off continuous testing pipeline that routes formatted failure tickets directly into the development team\'s workflow.', tags: ['Software Developer', 'Project Management'] },
+      { text: 'Engineered a lightweight QA reporting dashboard by piping automated test results directly into Google Sheets via API, providing accessible real-time metrics to cross-functional teams.', tags: ['Data Analytics', 'Consulting'] },
+      { text: 'Provided actionable UX and WCAG accessibility recommendations, bridging the gap between QA findings and strategic product improvements.', tags: ['Consulting', 'Software Developer'] },
+      { text: 'Designed a low-overhead incident logging system prioritizing rapid deployment and cross-functional accessibility over complex architecture.', tags: ['Software Developer', 'Project Management'] }
+    ]
+  },
+  {
+    company: 'Staaty',
+    location: 'Remote',
+    title: 'Chief Technology Officer / Lead Full Stack Engineer',
+    dates: '2024 – Current',
+    bullets: [
+      { text: 'Accelerated time-to-market by strategically selecting lightweight, high-speed technologies (DuckDB, Node.js) to deliver the initial platform MVP within 90 days; successfully demoed to major professional sports organizations.', tags: ['Software Developer', 'Project Management'] },
+      { text: 'Architected and co-executed a backend infrastructure migration from a Node/DuckDB stack to a highly scalable FastAPI and PostgreSQL architecture, onboarding a secondary engineer mid-cycle to execute the transition.', tags: ['Software Developer', 'Data Analytics', 'Project Management'] },
+      { text: 'Engineered AI-driven content pipelines using Python and LLM APIs to autonomously generate dynamic player bios and statistical performance breakdowns from raw data, increasing average session duration by 15%.', tags: ['Data Analytics', 'Software Developer'] },
+      { text: 'Engineered custom data visualization packages integrating ChartJS within a Vue frontend to translate complex sports statistics into digestible tables and plots.', tags: ['Software Developer', 'Data Analytics'] },
+      { text: 'Integrated live game streaming and real-time community chat via WebSockets, driving concurrent user engagement during sporting events.', tags: ['Software Developer'] },
+      { text: 'Led high-stakes product demonstrations for major professional sports organizations, translating complex technical architecture into clear, business-driven value propositions.', tags: ['Consulting', 'Project Management'] },
+      { text: 'Engineered crawlable site architecture and implemented JSON-LD structured data, scaling organic traffic 300% (50 to 200+ daily sessions) in 8 weeks.', tags: ['Software Developer', 'Data Analytics'] }
+    ]
+  },
+  {
     company: 'Code:You (Nonprofit coding bootcamp)',
     location: 'Louisville, KY',
-    title: 'Technical Project Manager',
+    title: 'Technical Project Lead / Program Manager',
     dates: '2023 – Current',
     bullets: [
-      { text: 'Manage and mentor graduates transitioning into the tech workforce; provide project-based learning opportunities to build portfolios and improve job readiness.', tags: ['Project Management', 'Consulting'] },
-      { text: 'Partner with nonprofit organizations (up to 20 at a time) to identify and deliver technical solutions, overseeing end-to-end project scoping, development, and delivery.', tags: ['Project Management', 'Consulting'] },
-      { text: 'Spearheaded curriculum development for C#, JavaScript, AI, AWS, and Python with a focus on industry relevance and learner outcomes; leveraged data-driven strategies to improve student retention and course completion by ~10%.', tags: ['Data Analytics', 'Creative', 'Project Management'] },
-      { text: 'Recruit and coordinate volunteers to support student learning and program initiatives, cultivating a strong, mission-aligned community.', tags: ['Project Management', 'Consulting'] },
-      { text: 'Collaborate on digital marketing and outreach strategies, contributing insights to improve engagement across web, email, and social media platforms.', tags: ['Creative', 'Data Analytics'] }
+      { text: 'Directed portfolio-level strategy for 20 concurrent nonprofit web application projects using Monday.com and Kanban boards, managing complete SDLC from database schema design to cloud deployment.', tags: ['Project Management'] },
+      { text: 'Conducted deep-dive discovery sessions with nonprofit stakeholders to identify operational bottlenecks and architect tailored MVP solutions, leading iterative presentations to lock down project scope prior to development.', tags: ['Consulting', 'Project Management'] },
+      { text: 'Spearheaded curriculum development for C#, JavaScript, AI, AWS, and Python; leveraged data-driven strategies to improve student retention and course completion by ~10%.', tags: ['Data Analytics', 'Project Management', 'Software Developer'] },
+      { text: 'Engineered custom automation workflows via Python and Zapier integrating third-party APIs, reducing manual data entry workloads by 10+ hours per week.', tags: ['Data Analytics', 'Software Developer'] },
+      { text: 'Developed data pipelines and interactive dashboards using Python, Pandas, Tableau, and Streamlit to translate raw program data into actionable insights for leadership.', tags: ['Data Analytics'] },
+      { text: 'Architected technical SEO migrations for legacy nonprofit sites, achieving a 30% average increase in indexable pages and organic visibility.', tags: ['Software Developer', 'Consulting'] },
+      { text: 'Managed and mentored cohorts of up to 54 mentors and 600+ students; hosted office hours and live demos covering JavaScript, Python, C#, and Docker.', tags: ['Consulting', 'Project Management'] }
     ]
   },
   {
     company: 'Best One Tires',
     location: 'Louisville, KY',
-    title: 'IT Manager',
+    title: 'IT Director / Manager & Web Systems Developer',
     dates: '2021 – Current',
     bullets: [
-      { text: 'Designed and implemented real-time Business Intelligence (BI) dashboards to track sales performance and forecast growth trends, enabling strategic inventory planning during the COVID-19 supply chain crisis; contributed to 15%+ business growth.', tags: ['Data Analytics'] },
-      { text: 'Automated deployment and update processes using custom scripts in a Remote Monitoring & Management (RMM) platform, saving over 20 hours of manual IT labor monthly.', tags: ['Project Management', 'Consulting'] },
-      { text: 'Led end-to-end cloud migration of a self-hosted SaaS (Maddenco), reducing annual costs by $20K and eliminating hardware, licensing, and network security overhead.', tags: ['Project Management', 'Consulting'] },
-      { text: 'Orchestrated cellular migration of 200+ field devices to a new provider, cutting telecom costs by $12K/year and enhancing sales team productivity.', tags: ['Project Management'] },
-      { text: 'Negotiated fiber connectivity contracts with ISPs, improving network speed and stability across multiple sites while reducing expenses by $5K annually.', tags: ['Consulting', 'Project Management'] },
-      { text: 'Migrated on-premise SQL server to a cloud-hosted environment, modernizing infrastructure, enhancing scalability, and eliminating end-of-life systems and licensing costs.', tags: ['Data Analytics', 'Project Management'] },
-      { text: 'Oversaw transition to hosted VoIP solution, streamlining telecom operations and saving $12K annually in third-party support and licensing fees.', tags: ['Project Management'] },
-      { text: 'Documented and standardized all core IT and operational procedures, establishing repeatable best practices and improving cross-departmental efficiency.', tags: ['Project Management', 'Consulting'] },
-      { text: 'Negotiated new credit card processing agreement, saving the company over $187K annually through a custom fee model based on transaction patterns.', tags: ['Consulting', 'Data Analytics'] }
+      { text: 'Renegotiated enterprise credit card processing, ISP fiber contracts, and telecom agreements, securing a custom fee model that drove over $200K in total annual cost savings.', tags: ['Consulting', 'Project Management'] },
+      { text: 'Designed and deployed real-time BI dashboards using Python and SQL to monitor inventory and sales, averting supply chain bottlenecks and contributing to 15%+ business growth.', tags: ['Data Analytics'] },
+      { text: 'Directed end-to-end cloud migration of legacy on-premise SQL servers and a self-hosted SaaS platform (Maddenco), eliminating hardware overhead and end-of-life systems; reduced annual costs by $20K.', tags: ['Project Management', 'Consulting'] },
+      { text: 'Reengineered site architecture and deployed geo-specific landing pages with schema markup, scaling daily organic traffic from 20 to 250+ users.', tags: ['Software Developer', 'Data Analytics'] },
+      { text: 'Hardened web security by migrating infrastructure to AWS/Azure and configuring Cloudflare WAF, successfully mitigating data scraping and brute-force attacks.', tags: ['Project Management', 'Consulting'] },
+      { text: 'Orchestrated cellular migration of 200+ field devices via Apple DEP and transitioned to hosted VoIP, cutting telecom costs by $24K/year and enhancing sales productivity.', tags: ['Project Management'] },
+      { text: 'Architected automated multi-location data syncing pipelines bridging a legacy POS system with modern web reporting tools, saving employees 2–3 hours of manual entry daily.', tags: ['Data Analytics', 'Software Developer'] },
+      { text: 'Standardized core IT procedures through rigorous documentation and automated routine deployment workflows via RMM scripting, saving 20+ manual labor hours per month.', tags: ['Project Management', 'Consulting'] }
     ]
   },
   {
-    company: 'ADI (Resideo/Honeywell)',
+    company: 'ADI (Resideo / Honeywell)',
     location: 'Louisville, KY',
-    title: 'Technical Hardware Support Specialist',
+    title: 'Systems Developer / Technical Hardware Support Specialist',
     dates: '2019 – 2021',
     bullets: [
-      { text: 'Contributed to the development and optimization of Salesforce and internal software systems, enabling cross-departmental BI reporting and real-time updates that enhanced sales and operational transparency.', tags: ['Data Analytics', 'Project Management'] },
-      { text: 'Streamlined daily order processing workflows, reducing redundant tasks and improving visibility across teams; directly supported an increase in sales efficiency.', tags: ['Project Management', 'Consulting'] },
-      { text: 'Created custom scripting solutions for hardware programming tasks, reducing manual labor by 20+ hours on large orders and doubling departmental capacity for client onboarding.', tags: ['Creative', 'Data Analytics', 'Project Management'] },
-      { text: 'Programmed IP cameras, NVRs, and SQL-based systems to be pre-configured for plug-and-play deployment, improving customer experience and reducing post-sale support needs.', tags: ['Project Management'] }
+      { text: 'Automated operational tasks using SQL and custom scripting, reducing a 40-hour per-order manual process to a 1-hour automated workflow and doubling departmental client onboarding capacity.', tags: ['Data Analytics', 'Software Developer', 'Project Management'] },
+      { text: 'Developed internal diagnostic tools for support teams, improving resolution speed for complex client deployments by 25%.', tags: ['Software Developer', 'Consulting'] },
+      { text: 'Programmed over 1,700 IP cameras, NVRs, and SQL-based systems for plug-and-play deployment, improving customer experience and reducing post-sale support needs.', tags: ['Project Management'] },
+      { text: 'Contributed to Salesforce and internal software optimization, enabling cross-departmental BI reporting and real-time operational transparency across sales teams.', tags: ['Data Analytics', 'Consulting'] }
     ]
   },
   {
@@ -87,59 +116,77 @@ const jobs = [
     title: 'Project Manager / Technical Services Specialist',
     dates: '2016 – 2019',
     bullets: [
-      { text: 'Supported the development and enhancement of an internal property ticketing system and TIMS software, improving issue tracking and operational visibility across telecom services.', tags: ['Project Management'] },
-      { text: 'Provided Tier 1–2 technical support for wireline and wireless services, ensuring SLA compliance and rapid issue resolution.', tags: ['Consulting'] },
-      { text: 'Managed large-scale telecom projects, including multi-site service disconnects due to facility closures, carrier dispositions, and enterprise phone system migrations.', tags: ['Project Management'] },
-      { text: 'Coordinated circuit lifecycle management for WAN, PRI, SIP, and analog services, including ordering, transfers of ownership, audits, optimization, and vendor/carrier communication.', tags: ['Project Management'] },
-      { text: 'Identified cost-reduction opportunities and proposed alternative telecom solutions, delivering ongoing month-to-month savings aligned with evolving contract and business needs.', tags: ['Data Analytics', 'Consulting'] }
+      { text: 'Managed large-scale telecom projects including multi-site service disconnects, carrier dispositions, and enterprise phone system migrations.', tags: ['Project Management'] },
+      { text: 'Coordinated circuit lifecycle management for WAN, PRI, SIP, and analog services — ordering, transfers of ownership, audits, optimization, and vendor/carrier communication.', tags: ['Project Management', 'Consulting'] },
+      { text: 'Verified carrier invoices against contracts and initiated billing disputes, recovering credits and ensuring contracted rates were applied.', tags: ['Consulting', 'Data Analytics'] },
+      { text: 'Administered deployments and configuration changes for 300+ devices using AirWatch MDM; provided Tier 1–2 support for wireline, wireless, and Avaya PBX systems.', tags: ['Project Management', 'Consulting'] }
     ]
   }
 ]
 
-const projects = [
+const volunteer = [
   {
-    title: 'Louisville Foreclosure Dashboard',
-    year: '2025',
+    org: 'With Love Network',
+    location: 'Louisville, KY / International',
+    title: 'Co-Founder — Logistics & Operations',
     bullets: [
-      { text: 'Built a Streamlit dashboard to visualize and analyze Foreclosures in Louisville KY.', tags: ['Data Analytics', 'Creative'] },
-      { text: 'This was built to be a test assignment for students entering into the Code:You Pipeline.', tags: ['Project Management', 'Consulting'] },
-      { text: 'Built with GoLang, Python, and CSS.', tags: ['Creative', 'Data Analytics'] }
+      { text: 'Co-founded an international humanitarian aid initiative delivering over 3 tons of supplies to Ukraine, leveraging global relationships to route goods to high-need areas.', tags: ['Project Management', 'Consulting'] }
     ]
   },
   {
-    title: 'Code:You Sample Project Repository',
-    year: '2025',
+    org: 'Louisville Grows',
+    location: 'Louisville, KY',
+    title: 'Data Dashboard Developer',
     bullets: [
-      { text: 'Developed and maintained a dedicated repository to teach advanced, real-world software practices not fully covered in core bootcamp curriculum.', tags: ['Project Management', 'Creative'] },
-      { text: 'Created modules on transforming Jupyter notebooks into production-ready Python code, introducing OOP concepts, writing unit tests, and applying optimization strategies.', tags: ['Data Analytics', 'Creative'] },
-      { text: 'Designed break–fix exercises to improve students’ debugging skills and build confidence handling real-world production issues.', tags: ['Consulting', 'Project Management'] }
+      { text: 'Developed an internal data dashboard to track historical and current tree planting efforts, streamlining reporting for grant funding and directing future planting strategy.', tags: ['Data Analytics', 'Consulting'] }
     ]
   }
 ]
 
 const skills = [
-  { name: 'Project Management', tags: ['Project Management', 'Consulting'] },
-  { name: 'Scrum & Agile', tags: ['Project Management'] },
-  { name: 'Python & SQL', tags: ['Data Analytics', 'Creative'] },
-  { name: 'HTML/CSS & Vue', tags: ['Creative'] },
-  { name: 'Golang & Rest APIs', tags: ['Creative', 'Data Analytics'] },
-  { name: 'Data Storytelling', tags: ['Data Analytics', 'Consulting'] },
-  { name: 'Stakeholder Management', tags: ['Consulting', 'Project Management'] },
-  { name: 'Influence Without Authority', tags: ['Consulting', 'Project Management'] },
-  { name: 'GIS & R', tags: ['Data Analytics'] }
+  // Software / Full Stack
+  { name: 'Vue.js & React', tags: ['Software Developer'] },
+  { name: 'JavaScript, HTML & CSS', tags: ['Software Developer'] },
+  { name: 'Node.js & FastAPI', tags: ['Software Developer'] },
+  { name: 'C# & .NET', tags: ['Software Developer'] },
+  { name: 'REST APIs & WebSockets', tags: ['Software Developer', 'Data Analytics'] },
+  { name: 'Docker & Containerization', tags: ['Software Developer', 'Project Management'] },
+  { name: 'AWS, Azure & Cloud Deployment', tags: ['Software Developer', 'Project Management'] },
+  { name: 'CI/CD & GitHub Actions', tags: ['Software Developer', 'Project Management'] },
+  { name: 'QA Automation & Selenium', tags: ['Software Developer'] },
+  { name: 'Technical SEO & Schema / JSON-LD', tags: ['Software Developer', 'Data Analytics'] },
+  { name: 'Security — Cloudflare WAF, DNS Hardening', tags: ['Software Developer', 'Consulting'] },
+  { name: 'UI/UX — Wireframing to Production', tags: ['Software Developer'] },
+  // Data
+  { name: 'Python, Pandas & NumPy', tags: ['Data Analytics', 'Software Developer'] },
+  { name: 'SQL — MySQL, PostgreSQL, DuckDB', tags: ['Data Analytics', 'Software Developer'] },
+  { name: 'BI Dashboards — Tableau, Streamlit, Chart.js', tags: ['Data Analytics'] },
+  { name: 'Data Pipeline Engineering', tags: ['Data Analytics', 'Software Developer'] },
+  { name: 'AI / LLM Integration & Prompt Engineering', tags: ['Data Analytics', 'Software Developer'] },
+  { name: 'Automated Reporting & Email Delivery', tags: ['Data Analytics', 'Consulting'] },
+  { name: 'Data Storytelling & Stakeholder Visualization', tags: ['Data Analytics', 'Consulting'] },
+  // PM / Consulting
+  { name: 'Agile, Scrum & Sprint Management', tags: ['Project Management'] },
+  { name: 'Portfolio & Program Management', tags: ['Project Management', 'Consulting'] },
+  { name: 'Client Discovery & MVP Scoping', tags: ['Consulting', 'Project Management'] },
+  { name: 'Stakeholder Management & Executive Communication', tags: ['Consulting', 'Project Management'] },
+  { name: 'Vendor Negotiation & Procurement', tags: ['Consulting', 'Project Management'] },
+  { name: 'Budget Ownership & Cost Optimization', tags: ['Consulting', 'Project Management'] },
+  { name: 'Curriculum Design & Technical Training', tags: ['Project Management', 'Consulting'] },
+  { name: 'Influence Without Authority', tags: ['Consulting', 'Project Management'] }
 ]
 
-//  COMPUTED PROPERTIES 
+//  COMPUTED PROPERTIES
 const filteredJobs = computed(() => {
   return jobs.map(job => {
     return { ...job, bullets: job.bullets.filter(b => matchesFilter(b.tags)) }
   }).filter(job => job.bullets.length > 0)
 })
 
-const filteredProjects = computed(() => {
-  return projects.map(proj => {
-    return { ...proj, bullets: proj.bullets.filter(b => matchesFilter(b.tags)) }
-  }).filter(proj => proj.bullets.length > 0)
+const filteredVolunteer = computed(() => {
+  return volunteer.map(v => {
+    return { ...v, bullets: v.bullets.filter(b => matchesFilter(b.tags)) }
+  }).filter(v => v.bullets.length > 0)
 })
 
 const filteredSkills = computed(() => {
@@ -206,15 +253,17 @@ const filteredSkills = computed(() => {
         </div>
       </section>
 
-      <section v-if="filteredProjects.length > 0">
-        <h2>Projects</h2>
-        <div v-for="proj in filteredProjects" :key="proj.title" class="job-block">
+      <section v-if="filteredVolunteer.length > 0">
+        <h2>Volunteer & Community</h2>
+        <div v-for="v in filteredVolunteer" :key="v.org" class="job-block">
           <div class="entry-header">
-            <strong>{{ proj.title }}</strong>
-            <div class="date">{{ proj.year }}</div>
+            <div>
+              <strong>{{ v.org }}</strong> — <em>{{ v.location }}</em>
+              <div class="subtitle">{{ v.title }}</div>
+            </div>
           </div>
           <ul>
-            <li v-for="(bullet, index) in proj.bullets" :key="index">
+            <li v-for="(bullet, index) in v.bullets" :key="index">
               {{ bullet.text }}
             </li>
           </ul>

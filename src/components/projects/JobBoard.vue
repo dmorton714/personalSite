@@ -81,7 +81,7 @@ onUnmounted(() => {
       <strong>labor market intelligence tool</strong> that allowed students to
       identify and fill their own skill gaps based on real-time data
     </p>
-    <img src="/public/jobboard/cy-logo-stacked-black@2x.png" alt="CodeYou Logo" class="header-bg-logo" />
+    <img src="/jobboard/cy-logo-stacked-black@2x.png" alt="CodeYou Logo" class="header-bg-logo" />
   </header>
 
   <section id="scroll-section">
@@ -141,7 +141,7 @@ onUnmounted(() => {
           <a href="#" class="btn">Find out more</a>
         </div>
 
-        <img class="image-1" src="/public/jobboard/slack.png" />
+        <img class="image-1" src="/jobboard/slack.png" />
 
         <div class="box box-2">
           <h3>Breaking the Project Into Executable Parts</h3>

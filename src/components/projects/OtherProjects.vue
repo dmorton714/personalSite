@@ -133,7 +133,7 @@ onUnmounted(() => {
           <a href="https://github.com/dmorton714/db_migration" class="btn">Find out more</a>
         </div>
 
-        <img class="image-1" src="/public/otherProjects/citydash.png" />
+        <img class="image-1" src="/otherProjects/citydash.png" />
 
         <div class="box box-2">
           <h3>Learning Microservices</h3>
@@ -177,7 +177,7 @@ onUnmounted(() => {
           <a href="https://github.com/dmorton714/ForeclosureDashboard-/tree/main" class="btn">Find out more</a>
         </div>
 
-        <img class="image-2" src="/public/otherProjects/foreclosure.png" />
+        <img class="image-2" src="/otherProjects/foreclosure.png" />
 
         <div class="box box-3">
           <h3>Pandas PR</h3>
@@ -214,7 +214,7 @@ onUnmounted(() => {
           <a href="https://github.com/dmorton714/markDown" class="btn">Find out more</a>
         </div>
 
-        <img class="image-3" src="/public/otherProjects/markdown.png" />
+        <img class="image-3" src="/otherProjects/markdown.png" />
 
         <!-- Add more projects here -->
 

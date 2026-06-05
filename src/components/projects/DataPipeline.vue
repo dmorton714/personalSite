@@ -121,7 +121,7 @@ onUnmounted(() => {
           </p>
         </div>
 
-        <img class="image-1" src="/public/pokeProject/notebook.png" />
+        <img class="image-1" src="/pokeProject/notebook.png" />
 
         <div class="box box-2">
           <h3>Phase 2: Modular Architecture</h3>
@@ -165,7 +165,7 @@ onUnmounted(() => {
           </p>
         </div>
 
-        <img class="image-2" src="/public/pokeProject/arc.png" />
+        <img class="image-2" src="/pokeProject/arc.png" />
 
         <div class="box box-3">
           <h3>Phase 3: The main.py Orchestrator</h3>
@@ -195,7 +195,7 @@ onUnmounted(() => {
           </p>
         </div>
 
-        <img class="image-3" src="/public/pokeProject/pokeplot.png" />
+        <img class="image-3" src="/pokeProject/pokeplot.png" />
 
         <div class="box box-4">
           <h3>Engineering Impact</h3>
