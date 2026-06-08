@@ -57,9 +57,9 @@ const allImages = [
 <style scoped>
 .gallery-root {
   width: 100%;
-  max-width: 90%; 
+  max-width: 90%;
   margin: 0 auto;
-  padding-top: 70px;
+  padding-top: 40px;
   padding-bottom: 150px;
 }
 
@@ -126,7 +126,7 @@ const allImages = [
 @media (max-width: 600px) {
   .gallery-root {
     max-width: 100%;
-    padding: 100px 0;
+    padding: 30px 0 100px;
   }
   .hex-item { 
     width: 14vw;

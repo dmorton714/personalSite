@@ -501,10 +501,17 @@ img.image-4.visible {
 .dashboard-preview-wrapper {
   position: relative;
   width: 100%;
-  height: auto; 
+  height: auto;
   margin: 4rem auto;
   overflow: hidden;
   box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 600px) {
+  .dashboard-preview-wrapper {
+    overflow-x: auto;
+    margin: 2rem auto;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -544,62 +551,74 @@ img.image-4.visible {
 /* Mobile Devices (Max Width: 768px) */
 @media (max-width: 768px) {
   .page-header {
-    padding: 4rem 1.5rem;
+    padding: 3rem 1.25rem;
+  }
+
+  .page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .page-header p {
+    font-size: 1rem;
+  }
+
+  .page-header li {
+    font-size: 1rem;
   }
 
   .header-bg-logo {
-    display: none; /* Hide decorative logo on small screens to save space */
+    display: none;
   }
 
   .container {
-    padding: 0 1.5rem;
+    padding: 0;
   }
 
   h2 {
-    font-size: 36px;
-    padding-top: 40px;
+    font-size: 2rem;
+    padding-top: 2.5rem;
+    padding-left: 1.25rem;
+    text-align: left;
   }
 
-  /* Collapse the grid to a single column stack */
   .layout-container {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
-    padding-top: 4rem;
+    gap: 0;
+    padding-top: 1rem;
   }
 
-  /* Reset all specialized grid and margin positioning */
   .box-1, .box-2, .box-3, .box-4, .box-5 {
     grid-column: auto;
     margin-top: 0 !important;
     width: 100%;
-    padding: 2rem;
+    padding: 1.75rem 1.25rem;
   }
 
-  /* Reset image positioning to flow naturally between text blocks */
-  .image-1, .image-2, .image-3 {
+  .box h3 {
+    font-size: 1.4rem;
+  }
+
+  .image-1, .image-2, .image-3, .image-4 {
     margin: 0 auto !important;
-    width: 80%;
-    max-width: 300px;
-    transform: scale(0.9) rotate(0deg) !important; /* Remove rotation for clean mobile look */
+    width: 85%;
+    transform: scale(1) rotate(0deg) !important;
     display: flex;
     justify-content: center;
   }
-  
-  /* Ensure images fade in cleanly without the rotation skew on mobile */
-  img.image-1.visible, img.image-2.visible, img.image-3.visible {
+
+  img.image-1.visible, img.image-2.visible, img.image-3.visible, img.image-4.visible {
     transform: scale(1) rotate(0deg) !important;
   }
 
-  /* Hide the SVG line on mobile as the staggered layout is gone */
   .line-svg {
     display: none;
   }
-  
-  /* Remove the minimum height requirement since the SVG is gone */
+
   #scroll-section {
     min-height: auto;
-    padding-bottom: 4rem;
+    padding-bottom: 3rem;
   }
 }
 

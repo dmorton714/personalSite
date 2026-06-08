@@ -126,7 +126,7 @@ const jobs = [
 
 const volunteer = [
   {
-    org: 'With Love Network',
+    org: "з любов'ю (with love)",
     location: 'Louisville, KY / International',
     title: 'Co-Founder — Logistics & Operations',
     bullets: [

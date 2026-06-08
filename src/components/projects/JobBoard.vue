@@ -154,7 +154,6 @@ onUnmounted(() => {
           <p>
             So the first thing I did was break the system into clear parts:
           </p>
-          <p>
           <ul>
             <li>How jobs enter the system</li>
             <li>How they’re stored</li>
@@ -162,7 +161,6 @@ onUnmounted(() => {
             <li>How they’re queried</li>
             <li>How they’re displayed</li>
           </ul>
-          </p>
           <br>
           <p>
             Each part became its own set of tickets. Instead of assigning big features, I assigned small,
@@ -197,14 +195,12 @@ onUnmounted(() => {
             A lot of my time was spent:
           </p>
 
-          <p>
           <ul>
             <li>Refactoring duplicate logic</li>
             <li>Aligning database queries with the schema</li>
             <li>Fixing edge cases in expiration rules</li>
             <li>Standardizing structure on the frontend</li>
           </ul>
-          </p>
 
           <br>
 
@@ -239,14 +235,12 @@ onUnmounted(() => {
             Some of the work wasn’t visible in the UI at all.
           </p>
 
-          <p>
           <ul>
             <li>Tightening schema rules</li>
             <li>Cleaning up inconsistent records</li>
             <li>Preventing invalid submissions from reaching the database</li>
             <li>Revisiting edge cases discovered during testing</li>
           </ul>
-          </p>
         </div>
 
         <div class="box box-3">
@@ -548,62 +542,74 @@ img.image-3.visible {
 /* Mobile Devices (Max Width: 768px) */
 @media (max-width: 768px) {
   .page-header {
-    padding: 4rem 1.5rem;
+    padding: 3rem 1.25rem;
+  }
+
+  .page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .page-header p {
+    font-size: 1rem;
+  }
+
+  .page-header li {
+    font-size: 1rem;
   }
 
   .header-bg-logo {
-    display: none; /* Hide decorative logo on small screens to save space */
+    display: none;
   }
 
   .container {
-    padding: 0 1.5rem;
+    padding: 0;
   }
 
   h2 {
-    font-size: 36px;
-    padding-top: 40px;
+    font-size: 2rem;
+    padding-top: 2.5rem;
+    padding-left: 1.25rem;
+    text-align: left;
   }
 
-  /* Collapse the grid to a single column stack */
   .layout-container {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
-    padding-top: 4rem;
+    gap: 0;
+    padding-top: 1rem;
   }
 
-  /* Reset all specialized grid and margin positioning */
   .box-1, .box-2, .box-3, .box-4, .box-5 {
     grid-column: auto;
     margin-top: 0 !important;
     width: 100%;
-    padding: 2rem;
+    padding: 1.75rem 1.25rem;
   }
 
-  /* Reset image positioning to flow naturally between text blocks */
+  .box h3 {
+    font-size: 1.4rem;
+  }
+
   .image-1, .image-2, .image-3 {
     margin: 0 auto !important;
-    width: 80%;
-    max-width: 300px;
-    transform: scale(0.9) rotate(0deg) !important; /* Remove rotation for clean mobile look */
+    width: 85%;
+    transform: scale(1) rotate(0deg) !important;
     display: flex;
     justify-content: center;
   }
-  
-  /* Ensure images fade in cleanly without the rotation skew on mobile */
+
   img.image-1.visible, img.image-2.visible, img.image-3.visible {
     transform: scale(1) rotate(0deg) !important;
   }
 
-  /* Hide the SVG line on mobile as the staggered layout is gone */
   .line-svg {
     display: none;
   }
-  
-  /* Remove the minimum height requirement since the SVG is gone */
+
   #scroll-section {
     min-height: auto;
-    padding-bottom: 4rem;
+    padding-bottom: 3rem;
   }
 }
 

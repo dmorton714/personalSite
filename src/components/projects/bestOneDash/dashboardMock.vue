@@ -641,8 +641,73 @@ canvas { max-width: 100%; max-height: 100%; display: block; }
   .cardBox { grid-template-columns: repeat(2, 1fr); }
   .details { grid-template-columns: 1fr; }
 }
+
 @media (max-width: 768px) {
   .navigation { width: 70px; }
   .navigation .title { display: none; }
+}
+
+@media (max-width: 600px) {
+  .navigation {
+    display: none;
+  }
+
+  .dashboard-wrapper {
+    min-height: auto;
+  }
+
+  .search {
+    width: 100%;
+  }
+
+  .cardBox {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 8px;
+    grid-gap: 8px;
+  }
+
+  .cardBox .card {
+    padding: 12px 10px;
+  }
+
+  .cardBox .card .numbers {
+    font-size: 1.6em;
+  }
+
+  .cardBox .card .cardName {
+    font-size: 0.85em;
+  }
+
+  .cardBox .card .iconBox img {
+    max-width: 28px;
+    max-height: 28px;
+  }
+
+  .graphBox {
+    padding: 8px;
+    grid-gap: 8px;
+  }
+
+  .details {
+    padding: 8px;
+    grid-gap: 8px;
+  }
+
+  .details .workOrders {
+    min-height: auto;
+    overflow-x: auto;
+  }
+
+  .recentCustomers {
+    min-height: auto;
+  }
+
+  .details table {
+    font-size: 0.78em;
+  }
+
+  .details .workOrders table tr td {
+    padding: 6px 4px;
+  }
 }
 </style>

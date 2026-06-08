@@ -33,7 +33,7 @@ import PhotoGrid from '@/components/about/PhotoGrid.vue';
       <span class="highlight">That curiosity shows up in everything I do.</span>
     </p>
   </div>
-  <div class="phot-grid">
+  <div class="phot-grid" style="margin-top: -15px;">
     <PhotoGrid />
   </div>
 </template>

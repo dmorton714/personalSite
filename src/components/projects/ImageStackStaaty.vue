@@ -44,4 +44,16 @@ const projects = [
   z-index: 999;
   box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
+
+@media (max-width: 768px) {
+  #projects {
+    height: 220px;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .project img {
+    height: 180px;
+  }
+}
 </style>
